@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số BMI</title>
+    <style>
+        /* CSS để căn giữa màn hình */
+        body {
+            display: flex;              /* Sử dụng Flexbox */
+            justify-content: center;    /* Căn giữa theo chiều ngang */
+            align-items: center;        /* Căn giữa theo chiều dọc */
+            height: 100vh;              /* Chiều cao bằng 100% màn hình */
+            margin: 0;                  /* Xóa margin mặc định của trình duyệt */
+            font-family: Arial, sans-serif; /* Đổi font chữ cho dễ nhìn */
+            background-color: #f0f2f5;  /* Thêm màu nền nhẹ cho đẹp (tùy chọn) */
+        }
+
+        /* CSS trang trí cho cái khung Form */
+        form {
+            background-color: white;
+            padding: 30px;              /* Khoảng cách bên trong khung */
+            border-radius: 10px;        /* Bo tròn góc */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+            text-align: center;         /* Căn giữa chữ và ô input trong form */
+            width: 300px;               /* Cố định chiều rộng form */
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="BMI" method="post">
+        <h2>Nhập thông tin bản thân</h2>
+        
+        <label>Cân nặng (kg):</label><br>
+        <input type="text" name="weight" required placeholder="Ví dụ: 64" style="margin-bottom: 10px;"><br>
+        
+        <label>Chiều cao (mét):</label><br>
+        <input type="text" name="height" required placeholder="Ví dụ: 1.65"><br><br>
+        
+        <input type="submit" value="Tính kết quả">
+    </form>
+    
+</body>
+</html>
