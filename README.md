@@ -11,6 +11,15 @@ JDK Version: 11
 
 ---
 
+## AboutMe
+Introduction a litte bit about myself.
+
+| Result | 
+|-------------|
+| ![Result](Images/AboutMe/result.png) | 
+
+---
+
 ## ViDuDoPost
 This task helps me to know about what can DoPost can do  
 | Input | Result |
