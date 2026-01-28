@@ -17,10 +17,6 @@ This assignment is to help me to calculate BMI and give the result.
 |-------------|-------------|
 | ![Input](Images/BMI/input.png) | ![Result](Images/BMI/result.png) |
 
-| Result | 
-|-------------|
-| ![Result](Images/AboutMe/result.png) | 
-
 ---
 
 ## BaiTH1_3-AboutMe
