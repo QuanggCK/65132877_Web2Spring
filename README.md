@@ -11,7 +11,19 @@ JDK Version: 11
 
 ---
 
-## AboutMe
+## BaiTH1_4-BMI Calculator
+This assignment is to help me to calculate BMI and give the result.
+| Input | Result |
+|-------------|-------------|
+| ![Input](Images/BMI/input.png) | ![Result](Images/BMI/result.png) |
+
+| Result | 
+|-------------|
+| ![Result](Images/AboutMe/result.png) | 
+
+---
+
+## BaiTH1_3-AboutMe
 Introduction a litte bit about myself.
 
 | Result | 
@@ -20,7 +32,7 @@ Introduction a litte bit about myself.
 
 ---
 
-## ViDuDoPost
+## BaiTH1_2-ViDuDoPost
 This task helps me to know about what can DoPost can do  
 | Input | Result |
 |-------------|-------------|
@@ -28,7 +40,7 @@ This task helps me to know about what can DoPost can do
 
 ---
 
-## ViDuDoGet
+## BaiTH1_1-ViDuDoGet
 This task helps me to know about what can DoGet can do  
 **Example**: If you want to change the parameter in the link  
 Syntax: http://localhost:8888/BaiTH1_1/testDoGet?param1=36&param2=79  
