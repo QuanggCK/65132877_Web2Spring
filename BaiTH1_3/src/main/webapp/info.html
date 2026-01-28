@@ -1,10 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Thông tin sinh viên</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 500px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+
+
+        .text-section {
+            flex: 1; 
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        .image-section {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0; 
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 50%; 
+            border: 4px solid #4CAF50;
+        }
+
+       
+    </style>
 </head>
 <body>
+
+    <div class="info-card">
+        <div class="text-section">
+            <h2>Thông tin cá nhân</h2>
+            
+            <p><strong>Họ và tên:</strong><br> Phạm Minh Quang</p>
+            <p><strong>Lớp:</strong><br> 65.CNTT-CLC</p>
+            <p><strong>Mã sinh viên:</strong><br> 65132877</p>
+            
+        </div>
+
+        <div class="image-section">
+            <img src="https://via.placeholder.com/150" alt="Ảnh đại diện" class="avatar">
+        </div>
+    </div>
 
 </body>
 </html>
