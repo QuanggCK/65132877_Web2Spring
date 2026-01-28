@@ -11,6 +11,13 @@ JDK Version: 11
 
 ---
 
+## ViDuDoPost
+This task helps me to know about what can DoPost can do  
+| Input | Result |
+|-------------|-------------|
+| ![Input](Images/ViDuDoGet_DoPost/DoPost/input.png) | ![Result](Images/ViDuDoGet_DoPost/DoPost/result.png) |
+
+---
 
 ## ViDuDoGet
 This task helps me to know about what can DoGet can do  
@@ -21,7 +28,6 @@ Let me show you
 | Before | After |
 |-------------|-------------|
 | ![Before](Images/ViDuDoGet_DoPost/DoGet/before.png) | ![After](Images/ViDuDoGet_DoPost/DoGet/after.png) |
-
 
 ---
 
