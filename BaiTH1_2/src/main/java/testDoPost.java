@@ -41,7 +41,7 @@ public class testDoPost extends HttpServlet {
 		String value1 = request.getParameter("fname");
 		String value2 = request.getParameter("lname");
 		PrintWriter traVe = response.getWriter();
-		traVe.append("Bạn vừa gửi Yêu cầu dạng POST, đây là đáp ứng của tôi");
+		traVe.append("Bạn vừa gửi Yêu cầu dạng POST, đây là đáp ứng của tôi<br>");
 		traVe.append("Giá trị tham số fname = ");
 		traVe.append(value1);
 		traVe.append("<br>Giá trị tham số lname = ");
