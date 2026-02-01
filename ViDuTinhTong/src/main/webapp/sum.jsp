@@ -23,6 +23,7 @@ out.print(valueB);
 out.print(":");
 out.print(valueA + valueB);
 
+/* http://localhost:8888/ViDuTinhTong/sum.jsp?a=16&b=10 */
 %>
 </body>
 </html>
