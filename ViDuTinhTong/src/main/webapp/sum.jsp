@@ -9,8 +9,15 @@
 <body>
 <% 
 // Lấy giá trị tham số từ URL
-int valueA = Integer.parseInt(request.getParameter("a"));
+String strA = request.getParameter("a");
+int valueA = Integer.parseInt(strA);
 // Hoặc int valueA = Integer.parseInt(request.getParameter("a"));
+
+String strB = request.getParameter("b");
+int valueB = Integer.parseInt(strB);
+// Hoặc int valueB = Integer.parseInt(request.getParameter("b"));
+
+
 %>
 </body>
 </html>
