@@ -11,6 +11,16 @@
 
 ---
 
+## [🧮 ViDuTinhTong](ViDuTinhTong/)
+📌 This assignment helps me to understand how to use method **post** and **get** when displaying the result.  
+Post will hide the data on the url of the webiste whereas get will show it.
+
+| 📝 Input | 📊 Result |
+|-------------|-------------|
+| ![Input](Images/ViDuTinhTong/input.png) | ![Result](Images/ViDuTinhTong/result.png) |
+
+---
+
 ## [🧮 BaiTH1_4 – BMI Calculator](BaiTH1_4/)
 📌 This assignment helps me calculate **BMI** and display the result.
 
