@@ -12,8 +12,8 @@
 ---
 
 ## [🧮 ViDuTinhTong](ViDuTinhTong/)
-📌 This assignment helps me to understand how to use method **post** and **get** when displaying the result.  
-Post will hide the data on the url of the webiste whereas get will show it.
+This assignment helps me to understand how to use method **POST** and **GET** when displaying the result.  
+POST will hide the data on the url of the webiste whereas GET will show it.
 
 | 📝 Input | 📊 Result |
 |-------------|-------------|
