@@ -16,7 +16,12 @@ int valueA = Integer.parseInt(strA);
 String strB = request.getParameter("b");
 int valueB = Integer.parseInt(strB);
 // Hoặc int valueB = Integer.parseInt(request.getParameter("b"));
-
+out.print("Tổng của");
+out.print(valueA);
+out.print("và");
+out.print(valueB);
+out.print(":");
+out.print(valueA + valueB);
 
 %>
 </body>
