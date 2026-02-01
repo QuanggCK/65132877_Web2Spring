@@ -16,11 +16,10 @@ int valueA = Integer.parseInt(strA);
 String strB = request.getParameter("b");
 int valueB = Integer.parseInt(strB);
 // Hoặc int valueB = Integer.parseInt(request.getParameter("b"));
-out.print("Tổng của");
 out.print(valueA);
-out.print("và");
+out.print(" + ");
 out.print(valueB);
-out.print(":");
+out.print(" = ");
 out.print(valueA + valueB);
 
 /* http://localhost:8888/ViDuTinhTong/sum.jsp?a=16&b=10 */
