@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin sinh viên</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0098CA;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 500px;
+            display: flex;
+            flex-direction: column; 
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text-info {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #0098CA;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1em;
+            color: #555;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+
+        strong {
+            color: #333;
+        }
+
+
+        .avatar-container {
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #0098CA;
+        }
+
+        .youtube-section {
+            width: 100%;
+        }
+
+        .video-thumb {
+            width: 100%; 
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            border: 2px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="info-card">
+        
+        <div class="top-section">
+            <div class="text-info">
+                <h2>Thông tin cá nhân</h2>
+                <p><strong>Họ và tên:</strong><br> Phạm Minh Quang</p>
+                <p><strong>Lớp:</strong><br> 65.CNTT-CLC</p>
+                <p><strong>Mã sinh viên:</strong><br> 65132877</p>
+            </div>
+
+            <div class="avatar-container">
+                <img src="Images/avatar.png" alt="Ảnh đại diện" class="avatar">
+            </div>
+        </div>
+
+        <div class="youtube-section">
+            <h3>Một số điều về bản thân</h3>
+			<p style="font-weight: bold;">TOEIC: 895</p>
+            <p>Mình có sở hữu 1 kênh youtube, bạn có hứng thú thì nhấn vào hình bên dưới để xem video mới nhất nhé:</p>
+            
+            <a href="https://youtu.be/mJTbPhtAn9Q?si=tNrVCIyS-E5XlfIE" target="_blank">
+                <img src="Images/video1.jpg" alt="Video Youtube" class="video-thumb">
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
