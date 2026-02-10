@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Đăng nhập hệ thống</title>
+    <style>
+        body {
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; margin: 0; background-color: #f0f2f5; font-family: Arial, sans-serif;
+        }
+        .login-card {
+            background: white; padding: 40px; border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; width: 300px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%; padding: 10px; margin: 10px 0;
+            border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #0098CA; color: white; padding: 10px 20px;
+            border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px;
+        }
+        input[type="submit"]:hover { background-color: #007bb5; }
+    </style>
 </head>
 <body>
-
+    <div class="login-card">
+        <h2 style="color: #333;">Đăng Nhập</h2>
+        <form action="Login.jsp" method="post">
+            <input type="text" name="username" placeholder="Tài khoản" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="submit" value="Đăng nhập">
+        </form>
+    </div>
 </body>
 </html>
