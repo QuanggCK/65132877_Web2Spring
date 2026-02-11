@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
 <%
 
-    String u = request.getParameter("username");
-    String p = request.getParameter("password");
+    String uname = request.getParameter("username");
+    String pname = request.getParameter("password");
 
-    if("quanggck".equals(u) && "quanggck1610".equals(p)) {
+    if("quanggck".equals(uname) && "quanggck1610".equals(pname)) {
         response.sendRedirect("Main.html");
     } else {
 
@@ -37,7 +37,7 @@
         <div class="error-box">
             <h2>Opps! Sai rồi</h2>
             <p>Tài khoản hoặc mật khẩu không chính xác.</p>
-            <p>Bạn nhập: <b><%= u %></b></p>
+            <p>Bạn nhập: <b><%= uname %></b></p>
             <a href="Login.html" class="btn-back">Thử lại ngay</a>
         </div>
     </body>
