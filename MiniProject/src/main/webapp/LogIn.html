@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập hệ thống</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('Images/k9orcust.jpg');
+            background-repeat: no-repeat; 
+            background-size: cover;       
+            background-position: center; 
+            background-attachment: fixed; 
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            padding: 50px 40px; 
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2); 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+            width: 380px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: 700; 
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #0098CA, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 15px 20px; 
+            margin: 12px 0;
+            background-color: #f7f9fc;
+            border: 2px solid transparent; 
+            
+            border-radius: 50px; 
+            font-size: 15px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        input:focus {
+            background-color: #fff; 
+            border-color: #0098CA;  
+            box-shadow: 0 5px 15px rgba(0, 152, 202, 0.15); 
+            transform: translateY(-2px); 
+        }
+
+        ::placeholder {
+            color: #a0a0a0;
+            font-weight: 300;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #0098CA 0%, #00d2ff 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 152, 202, 0.3); /
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 15px 25px rgba(0, 152, 202, 0.4);
+        }
+        
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>CHÀO MỪNG</h2>
+        <form action="Login.jsp" method="post">
+            <input type="text" name="username" placeholder="Tài khoản" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="submit" value="Đăng Nhập">
+        </form>
+    </div>
+</body>
+</html>
