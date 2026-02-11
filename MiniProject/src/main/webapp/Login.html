@@ -7,14 +7,11 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            
-            /* --- CẤU HÌNH ẢNH NỀN --- */
-            background-image: url('Images/k9orcust.jpg'); /* Đường dẫn ảnh */
-            background-size: cover;       /* Ảnh sẽ tự co giãn để phủ kín toàn màn hình */
-            background-position: center;  /* Luôn lấy phần giữa của bức ảnh */
-            background-repeat: no-repeat; /* Không lặp lại ảnh nếu màn hình quá lớn */
-            background-attachment: fixed; /* Cố định ảnh khi cuộn trang */
-            
+            /*background-image: url('Images/k9orcust.jpg'); */
+            background-repeat: no-repeat; 
+            background-size: cover;       
+            background-position: center; 
+            background-attachment: fixed; 
             height: 100vh;
             margin: 0;
             display: flex;
@@ -23,14 +20,12 @@
         }
         
         .login-card {
-            /* Mình chỉnh độ trong suốt của nền trắng xuống 0.9 để nhìn thấy mờ mờ ảnh nền phía sau cho đẹp */
             background: rgba(255, 255, 255, 0.9); 
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Tăng bóng đen để nổi bật trên nền ảnh */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
             width: 350px;
             text-align: center;
-            backdrop-filter: blur(5px); /* Làm mờ nhẹ phần ảnh nằm dưới khung đăng nhập (hiệu ứng kính) */
         }
 
         h2 {
@@ -73,6 +68,7 @@
     </style>
 </head>
 <body>
+	<img src="Images/k9orcust.jpg">
     <div class="login-card">
         <h2>Welcome Back</h2>
         <form action="Login.jsp" method="post">
