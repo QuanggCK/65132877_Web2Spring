@@ -38,7 +38,7 @@
             <h2>Opps! Sai rồi</h2>
             <p>Tài khoản hoặc mật khẩu không chính xác.</p>
             <p>Bạn nhập: <b><%= uname %></b></p>
-            <a href="Login.html" class="btn-back">Thử lại ngay</a>
+            <a href="LogIn.html" class="btn-back">Thử lại ngay</a>
         </div>
     </body>
     </html>
