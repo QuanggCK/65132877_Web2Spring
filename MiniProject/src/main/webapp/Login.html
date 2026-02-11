@@ -3,33 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Đăng nhập hệ thống</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            display: flex; justify-content: center; align-items: center;
-            height: 100vh; margin: 0; background-color: #f0f2f5; font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            
+            /* --- CẤU HÌNH ẢNH NỀN --- */
+            background-image: url('Images/k9orcust.jpg'); /* Đường dẫn ảnh */
+            background-size: cover;       /* Ảnh sẽ tự co giãn để phủ kín toàn màn hình */
+            background-position: center;  /* Luôn lấy phần giữa của bức ảnh */
+            background-repeat: no-repeat; /* Không lặp lại ảnh nếu màn hình quá lớn */
+            background-attachment: fixed; /* Cố định ảnh khi cuộn trang */
+            
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        
         .login-card {
-            background: white; padding: 40px; border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; width: 300px;
+            /* Mình chỉnh độ trong suốt của nền trắng xuống 0.9 để nhìn thấy mờ mờ ảnh nền phía sau cho đẹp */
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Tăng bóng đen để nổi bật trên nền ảnh */
+            width: 350px;
+            text-align: center;
+            backdrop-filter: blur(5px); /* Làm mờ nhẹ phần ảnh nằm dưới khung đăng nhập (hiệu ứng kính) */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         input[type="text"], input[type="password"] {
-            width: 100%; padding: 10px; margin: 10px 0;
-            border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #eee;
+            border-radius: 30px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #0098CA;
+            box-shadow: 0 0 8px rgba(0,152,202,0.2);
         }
         input[type="submit"] {
-            background-color: #0098CA; color: white; padding: 10px 20px;
-            border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(to right, #0098CA, #00d2ff);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
         }
-        input[type="submit"]:hover { background-color: #007bb5; }
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,152,202,0.4);
+        }
     </style>
 </head>
 <body>
     <div class="login-card">
-        <h2 style="color: #333;">Đăng Nhập</h2>
+        <h2>Welcome Back</h2>
         <form action="Login.jsp" method="post">
-            <input type="text" name="username" placeholder="Tài khoản" required>
-            <input type="password" name="password" placeholder="Mật khẩu" required>
-            <input type="submit" value="Đăng nhập">
+            <input type="text" name="username" placeholder="Tài khoản (quanggck)" required>
+            <input type="password" name="password" placeholder="Mật khẩu (quanggck1610)" required>
+            <input type="submit" value="Đăng Nhập">
         </form>
     </div>
 </body>
