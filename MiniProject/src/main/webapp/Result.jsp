@@ -160,11 +160,11 @@
 
         <div class="message">
             <% if(score == 5) { %>
-                <span><i class="fas fa-trophy" style="color: #f1c40f;"></i> Xuất sắc! Bạn đúng là Fan Cứng "Trongdepzai" rồi!</span>
+                <span><i class="fas fa-trophy" style="color: #f1c40f;"></i> Xuất sắc!</span>
             <% } else if(score >= 3) { %>
-                <span><i class="fas fa-thumbs-up"></i> Làm tốt lắm! Nhưng vẫn còn sai sót nhé.</span>
+                <span><i class="fas fa-thumbs-up"></i> Làm tốt lắm! Nhưng vẫn còn sai sót nhé :V</span>
             <% } else { %>
-                <span><i class="fas fa-book-reader"></i> Sai hơi nhiều, cần xem video kỹ hơn nha!</span>
+                <span><i class="fas fa-book-reader"></i> Sai hơi nhiều :<<</span>
             <% } %>
         </div>
 
@@ -194,7 +194,7 @@
             </div>
 
             <div class="detail-row">
-                <span class="q-name">3. Bạn Duelist:</span>
+                <span class="q-name">3. Duelist gặp nhiều nhất:</span>
                 <span>
                     <% if(r3) { %> 
                         <span class="correct"><i class="fas fa-check"></i> Đúng</span>
