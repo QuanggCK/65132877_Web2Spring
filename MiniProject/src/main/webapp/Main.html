@@ -4,307 +4,394 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QuanggCK</title>
-<link
-	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-body {
-	font-family: 'Poppins', sans-serif;
-	margin: 0;
-	background-color: #131314;
-	color: white;
-	overflow-x: hidden;
-}
 
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 40px;
-	background: #0098CA;
-	border-bottom: 1px solid #2a2a2a;
-	position: sticky;
-	top: 0;
-	z-index: 1000;
-}
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background-color: #131314;
+        color: white;
+        overflow-x: hidden;
+    }
 
-.logo {
-	font-weight: 800;
-	font-size: 24px;
-	color: white;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
+    /* --- NAVBAR --- */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        background: #0098CA;
+        border-bottom: 1px solid #2a2a2a;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-.logo i {
-	color: #0098CA;
-}
+    .logo {
+        font-weight: 800;
+        font-size: 24px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-.user-menu {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-}
+    .logo i { color: white; }
 
-.user-menu img {
-	width: 35px;
-	height: 35px;
-	border-radius: 50%;
-	cursor: pointer;
-}
+    .user-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 
-.channel-header {
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 40px 20px;
-	display: flex;
-	align-items: center;
-	gap: 25px;
-}
+    .user-menu img {
+        width: 35px; height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 
-.channel-avatar {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	object-fit: cover;
-}
+    /* --- HEADER --- */
+    .channel-header {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
 
-.channel-text h1 {
-	margin: 0;
-	font-size: 40px;
-	font-weight: 700;
-}
+    .channel-avatar {
+        width: 100px; height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
-.content-area {
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 0 20px 50px;
-}
+    .channel-text h1 {
+        margin: 0;
+        font-size: 40px;
+        font-weight: 700;
+    }
 
-.section-title {
-	font-size: 22px;
-	font-weight: 700;
-	margin-bottom: 25px;
-	padding-bottom: 15px;
-	border-bottom: 1px solid #2a2a2a;
-}
+    /* --- VIDEO GRID --- */
+    .content-area {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 50px;
+    }
 
-.video-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 20px;
-	row-gap: 40px;
-}
+    .section-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #2a2a2a;
+    }
 
-.video-card {
-	cursor: pointer;
-	transition: transform 0.2s;
-}
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        row-gap: 40px;
+    }
 
-.video-card:hover {
-	transform: scale(1.02);
-}
+    .video-card {
+        cursor: pointer;
+        transition: transform 0.2s;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
 
-.thumbnail {
-	width: 100%;
-	aspect-ratio: 16/9;
-	background-color: #202020;
-	border-radius: 12px;
-	overflow: hidden;
-	position: relative;
-	margin-bottom: 12px;
-}
+    .video-card:hover { transform: scale(1.02); }
 
-.thumbnail img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
+    .thumbnail {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: #202020;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 12px;
+    }
 
-.duration {
-	position: absolute;
-	bottom: 6px;
-	right: 6px;
-	background: rgba(0, 0, 0, 0.85);
-	padding: 3px 5px;
-	border-radius: 4px;
-	font-size: 12px;
-	font-weight: 600;
-}
+    .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
 
-.video-info {
-	display: flex;
-	gap: 12px;
-}
+    .duration {
+        position: absolute;
+        bottom: 6px; right: 6px;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 3px 5px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+    }
 
-.video-title {
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 1.4;
-	color: #f1f1f1;
-	margin-bottom: 6px;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
+    .video-info { display: flex; gap: 12px; }
 
-.video-meta {
-	color: #aaa;
-	font-size: 14px;
-}
+    .video-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #f1f1f1;
+        margin-bottom: 6px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .video-meta { color: #aaa; font-size: 14px; }
+    .footer-quiz {
+        margin-top: 80px;
+        padding: 60px 20px;
+        background: #0a0a0a;
+        border-top: 1px solid #333;
+        color: white;
+    }
+    .quiz-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #141414;
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid #333;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .quiz-header { text-align: center; margin-bottom: 40px; }
+    .quiz-header h2 { color: #0098CA; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
+    .quiz-header p { color: #888; margin-top: 5px; font-size: 14px; }
+    
+    .question-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #2a2a2a;
+    }
+    .q-label { font-weight: 600; color: #ddd; width: 55%; padding-right: 20px; }
+    .a-input-group { width: 45%; }
+    
+    .quiz-input {
+        width: 100%;
+        padding: 12px 15px;
+        background: #222;
+        border: 1px solid #444;
+        border-radius: 8px;
+        color: white;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    .quiz-input:focus { outline: none; border-color: #0098CA; background: #2a2a2a; }
+    
+    .btn-submit {
+        display: block;
+        width: 200px;
+        margin: 40px auto 0;
+        padding: 12px;
+        background: #0098CA;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+    .btn-submit:hover { background: #0081ab; transform: scale(1.05); }
+
+    @media (max-width: 768px) {
+        .question-row { flex-direction: column; align-items: flex-start; }
+        .q-label { width: 100%; margin-bottom: 10px; }
+        .a-input-group { width: 100%; }
+    }
 </style>
 </head>
 <body>
 
-	<nav class="navbar">
-		<div class="logo">
-			<i class="fab fa-youtube"></i> QuanggCK
-		</div>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fab fa-youtube"></i> QuanggCK
+        </div>
 
-		<div class="user-menu">
-			<a href="LogIn.html"
-				style="color: #aaa; text-decoration: none; font-size: 14px;"> <i
-				class="fas fa-sign-out-alt"></i> Đăng xuất
-			</a> <img src="Images/avatar.png" alt="User">
-		</div>
-	</nav>
+        <div class="user-menu">
+            <a href="LogIn.html" style="color: white; text-decoration: none; font-size: 14px;"> 
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+            </a> 
+            <img src="Images/avatar.png" alt="User">
+        </div>
+    </nav>
 
-	<header class="channel-header">
-		<img src="Images/avatar.png" class="channel-avatar">
-		<div class="channel-text">
-			<h1>QuanggCK</h1>
-		</div>
-	</header>
+    <header class="channel-header">
+        <img src="Images/avatar.png" class="channel-avatar">
+        <div class="channel-text">
+            <h1>QuanggCK</h1>
+        </div>
+    </header>
 
-	<div class="section-title">Các video yêu thích nhất</div>
-	<div class="content-area">
-		<div class="video-grid">
-			
+    <div class="section-title" style="max-width: 1400px; margin: 0 auto 25px auto;">Các video yêu thích nhất</div>
+    
+    <div class="content-area">
+        <div class="video-grid">
+            
+            <a href="https://youtu.be/iiVn-mOrb_k?si=UZCTay9V3oZh1vNv" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/orcust.jpg">
+                    <div class="duration">5:33</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">ORCUST PURE COMBO POST Battles of Legend: Monster Mayhem.</div>
+                        <div class="video-meta">6,7k lượt xem • 8 tháng trước</div>
+                    </div>
+                </div>
+            </a> 
 
-			<a href="https://youtu.be/iiVn-mOrb_k?si=UZCTay9V3oZh1vNv"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/orcust.jpg">
-					<div class="duration">5:33</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">ORCUST PURE COMBO POST Battles of
-							Legend: Monster Mayhem.</div>
-						<div class="video-meta">6,7k lượt xem • 8 tháng trước</div>
-					</div>
-				</div>
-			</a> <a href="https://youtu.be/c0dg6D1WoK8?si=24CkdwU0uGHRsT4k"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/bllueyes1.jpg">
-					<div class="duration">7:58</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">Blue-Eyes Combos POST Structure
-							Deck: Advent of The Eyes of Blue.</div>
-						<div class="video-meta">6,4k lượt xem • 2 năm trước</div>
-					</div>
-				</div>
-			</a> <a href="https://youtu.be/SHHDbEpuG4U?si=koC_XY6yhHr2DaY_"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/crystron.jpg">
-					<div class="duration">5:33</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">K9 Crystron Combo Tutorial |
-							Yu-Gi-Oh! - (EDOPRO).</div>
-						<div class="video-meta">5,7k lượt xem • 7 tháng trước</div>
-					</div>
-				</div>
-			</a> <a href="https://youtu.be/8dWMlplCXlE?si=e6ivpdrnEyA3mjMP"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/bevsm.jpg">
-					<div class="duration">8:58</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">Primite Blue-Eyes vs Memento |
-							Yu-Gi-Oh! - (EDOPRO).</div>
-						<div class="video-meta">4,3k lượt xem • 1 năm trước</div>
-					</div>
-				</div>
-			</a> <a href="https://youtu.be/2tEH2jnmAqU?si=1voTh8kVV3xNVEOD"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/k9orcust.jpg">
-					<div class="duration">7:48</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">K9 Orcust COMBO GUIDE POST DOOD
-							(Doom Of Dimensions) - Yu-Gi-Oh!.</div>
-						<div class="video-meta">3,3k lượt xem • 5 tháng trước</div>
-					</div>
-				</div>
-			</a> 
-			
-			<a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/bei.jpg">
-					<div class="duration">4:39</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">NEW Blue-Eyes Invoked combos POST
-							Structure Deck: Blue-Eyes White Destiny.</div>
-						<div class="video-meta">2,8k lượt xem • 11 tháng trước</div>
-					</div>
-				</div>
-			</a> 
-			
-			<a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/blueeyes2.jpg">
-					<div class="duration">4:39</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">Blue-Eyes with NEW Overframe cards - Deep-Eyes White Dragon, The Blue Abyss.</div>
-						<div class="video-meta">220 lượt xem • 2 tuần trước</div>
-					</div>
-				</div>
-			</a>
-			
-			<a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp"
-				target="_blank" class="video-card"
-				style="text-decoration: none; color: inherit; display: block;">
-				<div class="thumbnail">
-					<img src="Images/cyber.jpg">
-					<div class="duration">10:11</div>
-				</div>
-				<div class="video-info">
-					<div>
-						<div class="video-title">K9 Cyber Dragon combos + Decklist POST Selection Pack: Strike Of Justice | MDPRO3 | MASTER DUEL.</div>
-						<div class="video-meta">87 lượt xem • 2 tuần trước</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
+            <a href="https://youtu.be/c0dg6D1WoK8?si=24CkdwU0uGHRsT4k" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/bllueyes1.jpg">
+                    <div class="duration">7:58</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">Blue-Eyes Combos POST Structure Deck: Advent of The Eyes of Blue.</div>
+                        <div class="video-meta">6,4k lượt xem • 2 năm trước</div>
+                    </div>
+                </div>
+            </a> 
+
+            <a href="https://youtu.be/SHHDbEpuG4U?si=koC_XY6yhHr2DaY_" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/crystron.jpg">
+                    <div class="duration">5:33</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">K9 Crystron Combo Tutorial | Yu-Gi-Oh! - (EDOPRO).</div>
+                        <div class="video-meta">5,7k lượt xem • 7 tháng trước</div>
+                    </div>
+                </div>
+            </a> 
+
+            <a href="https://youtu.be/8dWMlplCXlE?si=e6ivpdrnEyA3mjMP" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/bevsm.jpg">
+                    <div class="duration">8:58</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">Primite Blue-Eyes vs Memento | Yu-Gi-Oh! - (EDOPRO).</div>
+                        <div class="video-meta">4,3k lượt xem • 1 năm trước</div>
+                    </div>
+                </div>
+            </a> 
+
+            <a href="https://youtu.be/2tEH2jnmAqU?si=1voTh8kVV3xNVEOD" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/k9orcust.jpg">
+                    <div class="duration">7:48</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">K9 Orcust COMBO GUIDE POST DOOD (Doom Of Dimensions) - Yu-Gi-Oh!.</div>
+                        <div class="video-meta">3,3k lượt xem • 5 tháng trước</div>
+                    </div>
+                </div>
+            </a> 
+            
+            <a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/bei.jpg">
+                    <div class="duration">4:39</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">NEW Blue-Eyes Invoked combos POST Structure Deck: Blue-Eyes White Destiny.</div>
+                        <div class="video-meta">2,8k lượt xem • 11 tháng trước</div>
+                    </div>
+                </div>
+            </a> 
+            
+            <a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/blueeyes2.jpg">
+                    <div class="duration">4:39</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">Blue-Eyes with NEW Overframe cards - Deep-Eyes White Dragon, The Blue Abyss.</div>
+                        <div class="video-meta">220 lượt xem • 2 tuần trước</div>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp" target="_blank" class="video-card">
+                <div class="thumbnail">
+                    <img src="Images/cyber.jpg">
+                    <div class="duration">10:11</div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title">K9 Cyber Dragon combos + Decklist POST Selection Pack: Strike Of Justice | MDPRO3 | MASTER DUEL.</div>
+                        <div class="video-meta">87 lượt xem • 2 tuần trước</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer-quiz">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2></i>Câu đố vui</h2>
+                <p>Thử tài Fan Cứng - Server sẽ chấm điểm cho bạn!</p>
+            </div>
+
+            <form action="Result.jsp" method="post">
+                
+                <div class="question-row">
+                    <div class="q-label">1. Kênh Youtube của mình là gì?</div>
+                    <div class="a-input-group">
+                        <input type="text" class="quiz-input" name="ans1" placeholder="Nhập tên kênh..." required>
+                    </div>
+                </div>
+
+                <div class="question-row">
+                    <div class="q-label">2. Mình đang sở hữu 2 deck là gì? (viết tên, cách nhau dấu phẩy)</div>
+                    <div class="a-input-group">
+                        <input type="text" class="quiz-input" name="ans2" placeholder="VD: Orcust, Blue-Eyes" required>
+                    </div>
+                </div>
+
+                <div class="question-row">
+                    <div class="q-label">3. Ai là người trong lớp bạn duel với bạn nhiều nhất?</div>
+                    <div class="a-input-group">
+                        <input type="text" class="quiz-input" name="ans3" placeholder="Nhập tên..." required>
+                    </div>
+                </div>
+
+                <div class="question-row">
+                    <div class="q-label">4. Level của Monster "Mementoal Tecuhtlica"?</div>
+                    <div class="a-input-group">
+                        <input type="number" class="quiz-input" name="ans4" placeholder="Nhập số Level..." required>
+                    </div>
+                </div>
+
+                <div class="question-row">
+                    <div class="q-label">5. Level của Monster "Starving Venom Predapower"?</div>
+                    <div class="a-input-group">
+                        <input type="number" class="quiz-input" name="ans5" placeholder="Nhập số Level..." required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Xác nhận</button>
+            </form>
+        </div>
+        <div style="text-align: center; margin-top: 30px; color: #555; font-size: 12px;">Designed by QuanggCK</div>
+    </footer>
 
 </body>
 </html>
