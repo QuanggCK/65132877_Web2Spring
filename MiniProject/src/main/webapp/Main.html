@@ -19,14 +19,13 @@ body {
 	overflow-x: hidden;
 }
 
-/* --- 1. NAVBAR (Thanh trên cùng) --- */
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 40px;
-	background: #0098CA; /* Cùng màu nền */
-	border-bottom: 1px solid #2a2a2a; /* Viền mờ ngăn cách */
+	background: #0098CA;
+	border-bottom: 1px solid #2a2a2a;
 	position: sticky;
 	top: 0;
 	z-index: 1000;
@@ -58,9 +57,8 @@ body {
 	cursor: pointer;
 }
 
-/* --- 2. HEADER ĐƠN GIẢN --- */
 .channel-header {
-	max-width: 1400px; /* Rộng hơn chút */
+	max-width: 1400px;
 	margin: 0 auto;
 	padding: 40px 20px;
 	display: flex;
@@ -81,7 +79,6 @@ body {
 	font-weight: 700;
 }
 
-/* --- 3. LƯỚI VIDEO --- */
 .content-area {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -98,10 +95,9 @@ body {
 
 .video-grid {
 	display: grid;
-	/* Tự động chia cột responsive */
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	gap: 20px;
-	row-gap: 40px; /* Khoảng cách hàng dọc xa hơn chút cho thoáng */
+	row-gap: 40px;
 }
 
 .video-card {
@@ -185,10 +181,10 @@ body {
 		</div>
 	</header>
 
+	<div class="section-title">Các video yêu thích nhất</div>
 	<div class="content-area">
-		<div class="section-title">Các video yêu thích nhất</div>
-
 		<div class="video-grid">
+			
 
 			<a href="https://youtu.be/iiVn-mOrb_k?si=UZCTay9V3oZh1vNv"
 				target="_blank" class="video-card"
@@ -246,9 +242,7 @@ body {
 						<div class="video-meta">4,3k lượt xem • 1 năm trước</div>
 					</div>
 				</div>
-			</a> 
-			
-			<a href="https://youtu.be/2tEH2jnmAqU?si=1voTh8kVV3xNVEOD"
+			</a> <a href="https://youtu.be/2tEH2jnmAqU?si=1voTh8kVV3xNVEOD"
 				target="_blank" class="video-card"
 				style="text-decoration: none; color: inherit; display: block;">
 				<div class="thumbnail">
@@ -262,8 +256,8 @@ body {
 						<div class="video-meta">3,3k lượt xem • 5 tháng trước</div>
 					</div>
 				</div>
-			</a>
-			 
+			</a> 
+			
 			<a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp"
 				target="_blank" class="video-card"
 				style="text-decoration: none; color: inherit; display: block;">
@@ -278,8 +272,37 @@ body {
 						<div class="video-meta">2,8k lượt xem • 11 tháng trước</div>
 					</div>
 				</div>
+			</a> 
+			
+			<a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp"
+				target="_blank" class="video-card"
+				style="text-decoration: none; color: inherit; display: block;">
+				<div class="thumbnail">
+					<img src="Images/blueeyes2.jpg">
+					<div class="duration">4:39</div>
+				</div>
+				<div class="video-info">
+					<div>
+						<div class="video-title">Blue-Eyes with NEW Overframe cards - Deep-Eyes White Dragon, The Blue Abyss.</div>
+						<div class="video-meta">220 lượt xem • 2 tuần trước</div>
+					</div>
+				</div>
 			</a>
-
+			
+			<a href="https://youtu.be/k9sNto3Yle4?si=rFCAuaWfQun7OuAp"
+				target="_blank" class="video-card"
+				style="text-decoration: none; color: inherit; display: block;">
+				<div class="thumbnail">
+					<img src="Images/blueeyes2.jpg">
+					<div class="duration">10:11</div>
+				</div>
+				<div class="video-info">
+					<div>
+						<div class="video-title">K9 Cyber Dragon combos + Decklist POST Selection Pack: Strike Of Justice | MDPRO3 | MASTER DUEL.</div>
+						<div class="video-meta">87 lượt xem • 2 tuần trước</div>
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
 
