@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "question": "Kênh Youtube của mình là gì?",
+    "options": [
+      "El Exordio Del Duelista",
+      "Duel Evolution",
+      "QuanggCK",
+      "YGO Việt Nam"
+    ],
+    "answer": "QuanggCK"
+  },
+  {
+    "id": 2,
+    "question": "Mình đang sở hữu 2 deck là gì?",
+    "options": [
+      "Orcust - Blue-Eyes",
+      "Elfnote - HERO",
+      "Memento - Tearlaments",
+      "Sky Striker - Kashtira"
+    ],
+    "answer": "Orcust - Blue-Eyes"
+  },
+  {
+    "id": 3,
+    "question": "Ai là người trong lớp bạn duel với bạn nhiều nhất?",
+    "options": [
+      "Trongdepzai - Trọng",
+      "Lux - Huy",
+      "llk - Kiên",
+      "DatBeo - Đạt"
+    ],
+    "answer": "Trongdepzai - Trọng"
+  },
+  {
+    "id": 4,
+    "question": "Level của Monster 'Mementoal Tecuhtlica' là bao nhiêu?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": "11"
+  },
+  {
+    "id": 5,
+    "question": "Level của Monster 'Starving Venom Predapower' là bao nhiêu?",
+    "options": [
+      "8",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+      "id": 6,
+      "question": "ATK của Decode Talker là bao nhiêu?",
+      "options": [
+        "2000",
+        "2100",
+        "2200",
+        "2300"
+      ],
+      "answer": "2300"
+   },
+   {
+       "id": 7,
+       "question": "Pack mới nhất trong Master Duel tên là gì?",
+       "options": [
+         "True Awakening of the Oathbound Knights",
+         "Strike Of Justice",
+         "Aerial Superiority",
+         "The Drastic Storm"
+       ],
+       "answer": "Strike Of Justice"
+     }
+]
