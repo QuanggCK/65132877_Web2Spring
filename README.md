@@ -11,6 +11,10 @@
 
 ---
 
+## [ MiniProject](MiniProject/)
+What is this project about? -> Some of my favourite video on youtube and a mini quiz with my CV.  
+This mini project to help me practice all the things I've learnt for Java Web (HTML, JSP, even Json).  
+I use json to store the question.
 
 
 
