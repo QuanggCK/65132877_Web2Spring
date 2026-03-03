@@ -11,6 +11,18 @@
 
 ---
 
+
+
+
+---
+
+## [ LoginHTML&JSP](LoginHTML_JSP)
+This assignment teaches me how **html** and **jsp** works.  
+HTML: Is a **static** web. It just create the exact what we did in the code, only html.  
+JSP: Is a **dynamic** web. It can mix with both Java and HTML.
+
+---
+
 ## [🧮 ViDuTinhTong](ViDuTinhTong/)
 This assignment helps me to understand how to use method **POST** and **GET** when displaying the result.  
 POST will hide the data on the url of the webiste whereas GET will show it.
