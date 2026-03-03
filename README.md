@@ -16,7 +16,9 @@ What is this project about? -> Some of my favourite video on youtube and a mini 
 This mini project to help me practice all the things I've learnt for Java Web (HTML, JSP, even Json).  
 I use json to store the question.
 
-
+| 📝 Login | 📊 HomePage | Question | Result
+|-------------|-------------|-------------|-------------|
+| ![Login](Images/MiniProject/login.png) | ![HomePage](Images/MiniProject/main.png) | ![Question](Images/MiniProject/cauhoi.png) | ![Result](Images/MiniProject/result.png) |
 
 ---
 
