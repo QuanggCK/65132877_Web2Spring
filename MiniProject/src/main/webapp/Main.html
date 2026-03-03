@@ -347,53 +347,63 @@
     </div>
 
     <footer class="footer-quiz">
-        <div class="quiz-container">
-            <div class="quiz-header">
-                <h2></i>Câu đố vui</h2>
-            </div>
-
-            <form action="Result.jsp" method="post">
-                
-                <div class="question-row">
-                    <div class="q-label">1. Kênh Youtube của mình là gì?</div>
-                    <div class="a-input-group">
-                        <input type="text" class="quiz-input" name="ans1" placeholder="Nhập tên kênh..." required>
-                    </div>
-                </div>
-
-                <div class="question-row">
-                    <div class="q-label">2. Mình đang sở hữu 2 deck là gì? (viết tên, cách nhau dấu phẩy)</div>
-                    <div class="a-input-group">
-                        <input type="text" class="quiz-input" name="ans2" placeholder="VD: Orcust, Blue-Eyes" required>
-                    </div>
-                </div>
-
-                <div class="question-row">
-                    <div class="q-label">3. Ai là người trong lớp bạn duel với bạn nhiều nhất?</div>
-                    <div class="a-input-group">
-                        <input type="text" class="quiz-input" name="ans3" placeholder="Nhập tên..." required>
-                    </div>
-                </div>
-
-                <div class="question-row">
-                    <div class="q-label">4. Level của Monster "Mementoal Tecuhtlica"?</div>
-                    <div class="a-input-group">
-                        <input type="number" class="quiz-input" name="ans4" placeholder="Nhập số Level..." required>
-                    </div>
-                </div>
-
-                <div class="question-row">
-                    <div class="q-label">5. Level của Monster "Starving Venom Predapower"?</div>
-                    <div class="a-input-group">
-                        <input type="number" class="quiz-input" name="ans5" placeholder="Nhập số Level..." required>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-submit">Xác nhận</button>
-            </form>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h2>Câu đố vui</h2>
         </div>
-        <div style="text-align: center; margin-top: 30px; color: #555; font-size: 12px;">QuanggCK</div>
-    </footer>
+
+        <form action="Result.jsp" method="post" id="quizForm">
+            
+            <div id="question-list">
+                </div>
+
+            <button type="submit" class="btn-submit">Xác nhận</button>
+        </form>
+    </div>
+    <div style="text-align: center; margin-top: 30px; color: #555; font-size: 12px;">QuanggCK</div>
+</footer>
 
 </body>
 </html>
+
+<script>
+    // Hàm đọc dữ liệu từ file JSON và hiển thị ra màn hình
+    fetch('Data/cauhoi.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('question-list');
+            
+            data.forEach((item, index) => {
+                // Tạo một khối bao quanh mỗi câu hỏi
+                const questionRow = document.createElement('div');
+                questionRow.className = 'question-row';
+
+                // Hiển thị tiêu đề câu hỏi
+                const label = document.createElement('div');
+                label.className = 'q-label';
+                label.innerHTML = `${item.id}. ${item.question}`;
+                questionRow.appendChild(label);
+
+                // Tạo nhóm các phương án trắc nghiệm
+                const optionsGroup = document.createElement('div');
+                optionsGroup.className = 'a-input-group-radio'; 
+
+                item.options.forEach(option => {
+                    const optionWrapper = document.createElement('div');
+                    optionWrapper.style.marginBottom = "8px";
+
+                    optionWrapper.innerHTML = `
+                        <label style="cursor: pointer; display: flex; align-items: center;">
+                            <input type="radio" name="ans${item.id}" value="${option}" required style="margin-right: 10px;">
+                            <span>${option}</span>
+                        </label>
+                    `;
+                    optionsGroup.appendChild(optionWrapper);
+                });
+
+                questionRow.appendChild(optionsGroup);
+                container.appendChild(questionRow);
+            });
+        })
+        .catch(error => console.error('Lỗi khi tải câu hỏi:', error));
+</script>
