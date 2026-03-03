@@ -459,7 +459,7 @@ body {
 
 <script>
     // Hàm đọc dữ liệu từ file JSON và hiển thị ra màn hình
-    fetch('Data/cauhoi.json')
+    fetch('Data/cauhoi.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('question-list');

@@ -129,7 +129,7 @@
     %>
 
     <div class="result-card">
-        <h2 style="color: #0098CA; text-transform: uppercase; margin-top: 0;">Kết Quả Thi Đấu</h2>
+        <h2 style="color: #0098CA; text-transform: uppercase; margin-top: 0;">Kết Quả </h2>
         
         <div class="score-circle">
             <%= score %>/7
@@ -137,9 +137,9 @@
 
         <div class="message">
             <% if(score == 7) { %>
-                <span><i class="fas fa-trophy" style="color: #f1c40f;"></i> King of Games! Xuất sắc!</span>
+                <span><i class="fas fa-trophy" style="color: #f1c40f;"></i>  Xuất sắc!</span>
             <% } else if(score >= 4) { %>
-                <span><i class="fas fa-thumbs-up"></i> Khá lắm! Bạn hiểu mình đấy!</span>
+                <span><i class="fas fa-thumbs-up"></i> Khá lắm! </span>
             <% } else { %>
                 <span><i class="fas fa-book-reader"></i> Cần tìm hiểu thêm rồi :<<</span>
             <% } %>
@@ -154,7 +154,7 @@
                             <span class="correct"><i class="fas fa-check"></i> Đúng</span>
                         <% } else { %> 
                             <span class="wrong"><i class="fas fa-times"></i> Sai</span>
-                            <span class="ans-hint">(Đ/a: <%= keys[i] %>)</span>
+                            <span class="ans-hint">(Đáp án: <%= keys[i] %>)</span>
                         <% } %>
                     </span>
                 </div>
