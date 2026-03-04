@@ -11,16 +11,18 @@
 
 ---
 
-## [ MiniProject](MiniProject/)
+## [🎯 MiniProject](MiniProject/)
 What is this project about? -> Some of my favourite video on youtube and a mini quiz with my CV.  
 This mini project to help me practice all the things I've learnt for Java Web (HTML, JSP, even Json).  
 I use json to store the question.
 
-
+| 🔐 Login | 🏠 HomePage | ❓ Question |🏆 Result
+|-------------|-------------|-------------|-------------|
+| ![Login](Images/MiniProject/login.png) | ![HomePage](Images/MiniProject/main.png) | ![Question](Images/MiniProject/cauhoi.png) | ![Result](Images/MiniProject/result.png) |
 
 ---
 
-## [ LoginHTML&JSP](LoginHTML_JSP)
+## [🔑 LoginHTML&JSP](LoginHTML_JSP)
 This assignment teaches me how **html** and **jsp** works.  
 HTML: Is a **static** web. It just create the exact what we did in the code, only html.  
 JSP: Is a **dynamic** web. It can mix with both Java and HTML.
