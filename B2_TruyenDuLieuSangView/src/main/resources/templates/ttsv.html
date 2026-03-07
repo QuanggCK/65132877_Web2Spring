@@ -15,29 +15,58 @@
             align-items: center;
         }
 
-        /* Tạo khung chứa thông tin */
+        /* Tăng chiều rộng khung (card) để chứa split layout */
         .info-card {
             background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 380px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 700px; /* Wider card */
+            overflow: hidden; /* Cần thiết cho border-radius */
         }
 
-        /* Định dạng tiêu đề */
-        .info-card h2 {
+        /* Định dạng tiêu đề chính */
+        .card-header h2 {
             text-align: center;
             color: #333366;
-            margin-top: 0;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 15px;
+            margin-top: 30px;
+            margin-bottom: 0px;
         }
 
-        /* KHỐI NỘI DUNG CHÍNH: Căn giữa toàn bộ khối này trong khung */
+        /* CONTAINER CHIA ĐÔI: Sử dụng Flexbox */
+        .split-container {
+            display: flex;
+            align-items: center; /* Vertically center content blocks */
+            padding: 30px;
+        }
+
+        /* NỬA BÊN TRÁI: Chứa ảnh Avatar */
+        .avatar-half {
+            flex: 1; /* Share space equally (50%) */
+            text-align: center; /* Center image within half */
+            padding-right: 20px;
+            border-right: 1px solid #e0e0e0; /* Optional vertical separator */
+        }
+
+        /* NỬA BÊN PHẢI: Chứa thông tin */
+        .info-half {
+            flex: 1; /* Share space equally (50%) */
+            padding-left: 20px;
+        }
+
+        /* ĐỊNH DẠNG ẢNH AVATAR: Tròn 50% */
+        .avatar-half img {
+            width: 150px; /* Kích thước cụ thể cho hình tròn */
+            height: 150px;
+            border-radius: 50%; /* Make circular (as requested) */
+            object-fit: cover; /* Crucial: Prevents stretching/distortion */
+            border: 4px solid #f0f2f5; /* Optional inner border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on image */
+        }
+
+        /* KHỐI NỘI DUNG THÔNG TIN (cũ, được giữ nguyên căn chỉnh) */
         .info-content {
             display: table; /* Hiển thị như một cái bảng */
-            margin: 0 auto; /* margin: auto giúp ép toàn bộ khối ra giữa khung */
+            margin: 0; /* margin: 0 auto; if left-right padding isn't equal */
             font-size: 16px;
         }
 
@@ -77,31 +106,41 @@
 <body>
 
     <div class="info-card">
-        <h2>Thông Tin Sinh Viên</h2>
-        
-        <div class="info-content">
-            <div class="info-row">
-                <span class="label">MSSV</span>
-                <span class="colon">:</span>
-                <span class="data" th:text="${ms}"></span>
+        <div class="card-header">
+            <h2>Thông Tin Sinh Viên</h2>
+        </div>
+
+        <div class="split-container">
+            <div class="avatar-half">
+                <img th:src="@{~/Images/avt.jpg}" alt="Avatar">
             </div>
-            
-            <div class="info-row">
-                <span class="label">Họ và tên</span>
-                <span class="colon">:</span>
-                <span class="data" th:text="${ten}"></span>
-            </div>
-            
-            <div class="info-row">
-                <span class="label">Năm sinh</span>
-                <span class="colon">:</span>
-                <span class="data" th:text="${nam}"></span>
-            </div>
-            
-            <div class="info-row">
-                <span class="label">Giới tính</span>
-                <span class="colon">:</span>
-                <span class="data" th:text="${gt}"></span>
+
+            <div class="info-half">
+                <div class="info-content">
+                    <div class="info-row">
+                        <span class="label">MSSV</span>
+                        <span class="colon">:</span>
+                        <span class="data" th:text="${ms}"></span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Họ và tên</span>
+                        <span class="colon">:</span>
+                        <span class="data" th:text="${ten}"></span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Năm sinh</span>
+                        <span class="colon">:</span>
+                        <span class="data" th:text="${nam}"></span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Giới tính</span>
+                        <span class="colon">:</span>
+                        <span class="data" th:text="${gt}"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
