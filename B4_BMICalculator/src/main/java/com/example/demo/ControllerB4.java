@@ -29,9 +29,9 @@ public class ControllerB4 {
 
         if (bmi < 18.5) {
             ketLuan = "Gầy (Thiếu cân)";
-        } else if (bmi >= 18.5 && bmi < 25.0) {
+        } else if (bmi >= 18.5 && bmi < 23.5) {
             ketLuan = "Bình thường (Chuẩn body)";
-        } else if (bmi >= 25.0 && bmi < 30.0) {
+        } else if (bmi >= 23.5 && bmi < 30.0) {
             ketLuan = "Thừa cân";
         } else {
             ketLuan = "Béo phì";
@@ -42,6 +42,6 @@ public class ControllerB4 {
         model.addAttribute("diemBMI", bmiLamTron);
         model.addAttribute("phanLoai", ketLuan);
 
-        return "ketqua_bmi";
+        return "ketqua";
     }
 }
