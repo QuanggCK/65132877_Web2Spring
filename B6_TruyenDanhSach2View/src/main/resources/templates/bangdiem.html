@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Điểm Học Sinh</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 40px; display: flex; justify-content: center; }
+        .table-container { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 600px; }
+        h2 { text-align: center; color: #333; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px;}
+        
+        /* CSS cho bảng */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px; text-align: center; border-bottom: 1px solid #ddd; }
+        th { background-color: #198754; color: white; font-weight: bold; }
+        tr:hover { background-color: #f1f1f1; }
+    </style>
+</head>
+<body>
+
+    <div class="table-container">
+        <h2>Bảng Điểm Lớp Học</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ và Tên</th>
+                    <th>Năm Sinh</th>
+                    <th>Điểm Số</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="hs, iterStat : ${ds}">
+                    <td th:text="${iterStat.count}"></td>
+                    <td th:text="${hs.ten}" style="text-align: left;"></td>
+                    <td th:text="${hs.namSinh}"></td>
+                    
+                    <td th:text="${hs.diem}" style="font-weight: bold; color: #0d6efd;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
