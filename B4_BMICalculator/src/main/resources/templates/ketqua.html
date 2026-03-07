@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết Quả BMI</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; display: flex; justify-content: center; padding-top: 50px; }
+        .result-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); width: 350px; text-align: center;}
+        h2 { color: #059669; border-bottom: 2px solid #e5e7eb; padding-bottom: 15px; margin-top: 0;}
+        .bmi-score { font-size: 48px; font-weight: bold; color: #dc2626; margin: 20px 0; }
+        .status { font-size: 20px; font-weight: bold; padding: 10px; border-radius: 8px; background-color: #fef2f2; color: #991b1b; }
+        a.btn { display: inline-block; margin-top: 25px; padding: 10px 20px; background-color: #6b7280; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;}
+        a.btn:hover { background-color: #4b5563; }
+    </style>
+</head>
+<body>
+
+    <div class="result-card">
+        <h2>Kết Quả Của Bạn</h2>
+        
+        <p style="color: #6b7280; margin-bottom: 0;">Chỉ số BMI:</p>
+        <div class="bmi-score" th:text="${diemBMI}"></div>
+        
+        <div class="status" th:text="'Phân loại: ' + ${phanLoai}"></div>
+        
+        <a href="/bai4" class="btn">Thử lại</a>
+    </div>
+
+</body>
+</html>
