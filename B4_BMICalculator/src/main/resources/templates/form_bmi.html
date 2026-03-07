@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính BMI</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; display: flex; justify-content: center; padding-top: 50px; }
+        .bmi-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); width: 350px; }
+        h2 { text-align: center; color: #2563eb; margin-top: 0; }
+        .input-group { margin-bottom: 20px; }
+        label { font-weight: bold; color: #374151; display: block; margin-bottom: 8px; }
+        input { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #2563eb; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        button:hover { background-color: #1d4ed8; }
+    </style>
+</head>
+<body>
+
+    <div class="bmi-card">
+        <h2>Kiểm Tra Cân Nặng</h2>
+        <form action="/tinh-bmi" method="POST">
+            
+            <div class="input-group">
+                <label>Chiều cao của bạn (Mét):</label>
+                <input type="number" step="0.01" name="chieuCao" required placeholder="Ví dụ: 1.75">
+            </div>
+            
+            <div class="input-group">
+                <label>Cân nặng của bạn (Kg):</label>
+                <input type="number" step="0.1" name="canNang" required placeholder="Ví dụ: 65.5">
+            </div>
+            
+            <button type="submit">Tính BMI</button>
+        </form>
+    </div>
+
+</body>
+</html>
