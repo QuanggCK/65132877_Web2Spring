@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông Tin Sinh Viên</title>
+    <style>
+        /* Căn giữa khung (card) trên màn hình */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Tạo khung chứa thông tin */
+        .info-card {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 380px;
+        }
+
+        /* Định dạng tiêu đề */
+        .info-card h2 {
+            text-align: center;
+            color: #333366;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        /* KHỐI NỘI DUNG CHÍNH: Căn giữa toàn bộ khối này trong khung */
+        .info-content {
+            display: table; /* Hiển thị như một cái bảng */
+            margin: 0 auto; /* margin: auto giúp ép toàn bộ khối ra giữa khung */
+            font-size: 16px;
+        }
+
+        /* Từng dòng */
+        .info-row {
+            display: table-row;
+        }
+
+        /* Cột dùng chung */
+        .label, .colon, .data {
+            display: table-cell;
+            padding-bottom: 15px; /* Khoảng cách dọc giữa các dòng */
+        }
+
+        /* Cột Nhãn (MSSV, Họ tên...) */
+        .label {
+            font-weight: bold;
+            color: #555;
+            white-space: nowrap; /* Không cho rớt dòng */
+        }
+
+        /* Cột dấu hai chấm (Ép thẳng hàng dọc) */
+        .colon {
+            font-weight: bold;
+            color: #555;
+            padding: 0 15px 0 5px; /* Căn lề trái phải cho dấu hai chấm */
+            text-align: center;
+        }
+        
+        /* Cột Dữ liệu */
+        .data {
+            color: #0056b3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="info-card">
+        <h2>Thông Tin Sinh Viên</h2>
+        
+        <div class="info-content">
+            <div class="info-row">
+                <span class="label">MSSV</span>
+                <span class="colon">:</span>
+                <span class="data" th:text="${ms}"></span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Họ và tên</span>
+                <span class="colon">:</span>
+                <span class="data" th:text="${ten}"></span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Năm sinh</span>
+                <span class="colon">:</span>
+                <span class="data" th:text="${nam}"></span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Giới tính</span>
+                <span class="colon">:</span>
+                <span class="data" th:text="${gt}"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
