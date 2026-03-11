@@ -84,6 +84,50 @@ public class HomeController {
         dsTrang.removeIf(p -> p.getId().equals(id));
         return "redirect:/page/all"; 
     }
+
+    @GetMapping("/post/all") 
+    public String getTatCaPost(ModelMap m) {
+        m.addAttribute("lstPosts", dsPost); 
+        return "allpost"; 
+    }
+
+    @GetMapping("/post/new")
+    public String showAddPostForm(ModelMap m) {
+        m.addAttribute("post", new Post()); 
+        return "newpost"; 
+    }
+
+    @PostMapping("/post/new")
+    public String saveNewPost(@ModelAttribute("post") Post newPost) {
+        dsPost.add(newPost); 
+        return "redirect:/post/all"; 
+    }
+
+
+    @GetMapping("/post/view/{id}")
+    public String viewPost(@PathVariable("id") String id, ModelMap m) {
+        Post foundPost = null;
+        for (Post p : dsPost) {
+            if (p.getId().equals(id)) {
+                foundPost = p;
+                break;
+            }
+        }
+        
+        if (foundPost != null) {
+            m.addAttribute("postDetail", foundPost);
+            return "viewpost"; 
+        } else {
+            return "redirect:/post/all"; 
+        }
+    }
+
+
+    @GetMapping("/post/delete/{id}")
+    public String deletePost(@PathVariable("id") String id) {
+        dsPost.removeIf(p -> p.getId().equals(id));
+        return "redirect:/post/all"; 
+    }
 	
 	
 	
