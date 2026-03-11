@@ -11,6 +11,15 @@
 
 ---
 
+## [🔹 B2_TruyenDuLieuSangView](B2_TruyenDuLieuSangView/)
+## [🔹 B3_LayThamSoTaiController](B2_LayThamSoTaiController/)
+## [🔹 B4_BMICalculator](B4_BMICalculator/)
+## [🔹 B5_TruyenDoiTuong2View](B2_TruyenDoiTuong2View/)
+## [🔹 B6_TruyenDanhSach2View](B6_TruyenDanhSach2View/)
+These 5 assignments are to understand
+
+---
+
 ## [🎯 MiniProject](MiniProject/)
 What is this project about? -> Some of my favourite video on youtube and a mini quiz with my CV.  
 This mini project to help me practice all the things I've learnt for Java Web (HTML, JSP, even Json).  
