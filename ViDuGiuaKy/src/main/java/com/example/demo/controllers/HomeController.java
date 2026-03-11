@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HomeController {
@@ -43,6 +46,45 @@ public class HomeController {
 		m.addAttribute("lstPages",dsTrang);
 		return "allpage";
 	}
+	
+    @GetMapping("/page/new")
+    public String showAddPageForm(ModelMap m) {
+        m.addAttribute("page", new Page()); 
+        return "newpage"; 
+    }
+
+    @PostMapping("/page/new")
+    public String saveNewPage(@ModelAttribute("page") Page newPage) {
+        dsTrang.add(newPage);
+        return "redirect:/page/all"; 
+    }
+
+
+    @GetMapping("/page/view/{id}")
+    public String viewPage(@PathVariable("id") String id, ModelMap m) {
+        Page foundPage = null;
+        for (Page p : dsTrang) {
+            if (p.getId().equals(id)) { 
+                foundPage = p;
+                break;
+            }
+        }
+        
+
+        if (foundPage != null) {
+            m.addAttribute("pageDetail", foundPage);
+            return "viewpage"; 
+        } else {
+            return "redirect:/page/all"; 
+        }
+    }
+
+    @GetMapping("/page/delete/{id}")
+    public String deletePage(@PathVariable("id") String id) {
+        dsTrang.removeIf(p -> p.getId().equals(id));
+        return "redirect:/page/all"; 
+    }
+	
 	
 	
 	

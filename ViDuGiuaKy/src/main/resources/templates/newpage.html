@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới Page</title>
+    <style>
+        /* Tương tự file trên, mình rút gọn phần khung */
+        body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; padding: 30px; }
+        .form-container { background: white; padding: 30px; max-width: 500px; margin: 0 auto; border-radius: 8px; border: 1px solid #ccc; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 15px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        a { text-decoration: none; color: #d32f2f; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Thêm mới Page</h2>
+        
+        <form th:action="@{/page/new}" th:object="${page}" method="post">
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="text" th:field="*{id}" required placeholder="Ví dụ: 004">
+            </div>
+            
+            <div class="form-group">
+                <label>Tên trang (Page Name):</label>
+                <input type="text" th:field="*{pageName}" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Từ khóa (Keyword):</label>
+                <input type="text" th:field="*{keyword}">
+            </div>
+            
+            <div class="form-group">
+                <label>Nội dung (Content):</label>
+                <textarea th:field="*{content}" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>ID Trang cha (Parent ID):</label>
+                <input type="text" th:field="*{parentPageId}">
+            </div>
+            
+            <button type="submit">Lưu lại</button>
+            <a th:href="@{/page/all}">Hủy bỏ</a>
+        </form>
+    </div>
+</body>
+</html>
