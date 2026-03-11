@@ -1,16 +1,12 @@
 package com.example.demo.controllers;
 
 public class Post {
-	public String id;
+    public String id;
     public String title;
     public String content;
     public String categoryId;
-
-    public Post(String id, String title, String content, String categoryId) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.categoryId = categoryId;
+    public String thumbnailImage;
+    public Post() {
     }
 
     public String getId() {
@@ -44,4 +40,22 @@ public class Post {
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
+
+    public String getThumbnailImage() {
+        return thumbnailImage;
+    }
+
+    public void setThumbnailImage(String thumbnailImage) {
+        this.thumbnailImage = thumbnailImage;
+    }
+
+    public Post(String id, String title, String content, String categoryId, String thumbnailImage) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.categoryId = categoryId;
+        this.thumbnailImage = thumbnailImage;
+    }
+
+
 }
