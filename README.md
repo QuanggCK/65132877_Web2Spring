@@ -16,7 +16,8 @@
 ## [🔹 B4_BMICalculator](B4_BMICalculator/)
 ## [🔹 B5_TruyenDoiTuong2View](B2_TruyenDoiTuong2View/)
 ## [🔹 B6_TruyenDanhSach2View](B6_TruyenDanhSach2View/)
-These 5 assignments are to understand
+These 5 assignments aim to help understand how Spring Boot MVC works, including handling requests, processing data in the Controller, and passing data to the View using **Thymeleaf**.  
+Thymeleaf: A tool that allows HTML pages to display dynamic data from Spring Boot.
 
 ---
 
