@@ -18,11 +18,15 @@ public class HomeController {
         String hoTen = "Phạm Minh Quang";
         int namSinh = 2005;
         String lop = "65.CNTT-CLC";
+        String anhDaiDien = "/images/quanggck.jpg"; 
         
         m.addAttribute("ms",mssv);
         m.addAttribute("ten",hoTen);
         m.addAttribute("nam",namSinh);
         m.addAttribute("lp",lop);
+
+        m.addAttribute("anh", anhDaiDien); 
+        
 		return "index";
 	}
 	

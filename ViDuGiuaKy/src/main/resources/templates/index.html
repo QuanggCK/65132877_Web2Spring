@@ -60,12 +60,45 @@
 
         aside ul li {
             border-bottom: 1px solid #333;
+        }
+        /* CSS chia bố cục phần thông tin */
+        .cv-content {
+            display: flex;
+            align-items: center; /* Căn giữa theo chiều dọc */
+            gap: 30px; /* Khoảng cách giữa ảnh và chữ */
+            margin-top: 20px;
+        }
+
+        /* CSS cho phần ảnh bên trái */
+        .cv-left img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Bo tròn ảnh */
+            object-fit: cover; /* Đảm bảo ảnh không bị méo */
+            border: 4px solid #1976d2; /* Tạo viền xanh cho đẹp */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Phần chữ bên phải chiếm phần không gian còn lại */
+        .cv-right {
+            flex: 1;
+        }
+
+        /* Thêm CSS cho thẻ a để có thể click toàn bộ khu vực chữ */
+        aside ul li a {
+            display: block;
             padding: 12px 15px;
             font-size: 16px;
+            text-decoration: none;
+            color: #333;
             cursor: pointer;
         }
 
-        aside ul li.active {
+        aside ul li a:hover {
+            background-color: #eee;
+        }
+
+        aside ul li.active a {
             font-weight: bold;
         }
 
@@ -130,21 +163,31 @@
 
     <aside>
         <ul>
-            <li class="active">Dasdboard</li>
-            <li>Page -List</li>
-            <li>Page -Addnew</li>
-            <li>Post -List</li>
-            <li>Post -Addnew</li>
+            <li class="active"><a th:href="@{/}">Dasdboard</a></li>
+            <li><a th:href="@{/page/all}">Page -List</a></li>
+            <li><a th:href="@{/page/new}">Page -Addnew</a></li>
+            <li><a th:href="@{/post/all}">Post -List</a></li>
+            <li><a th:href="@{/post/new}">Post -Addnew</a></li>
         </ul>
     </aside>
 
     <main>
-        <div class="cv-card">
+        <div class="cv-card" style="max-width: 600px;">
             <h2>THÔNG TIN SINH VIÊN</h2>
-            <p>Mã số sinh viên: <span th:text="${ms}">...</span></p>
-            <p>Họ và tên: <span th:text="${ten}">...</span></p>
-            <p>Năm sinh: <span th:text="${nam}">...</span></p>
-            <p>Lớp: <span th:text="${lp}">...</span></p>
+            
+            <div class="cv-content">
+                <div class="cv-left">
+                    <img th:src="@{${anh}}" alt="Ảnh đại diện">
+                </div>
+                
+                <div class="cv-right">
+                    <p><strong>Mã số sinh viên:</strong> <span th:text="${ms}">...</span></p>
+                    <p><strong>Họ và tên:</strong> <span th:text="${ten}">...</span></p>
+                    <p><strong>Năm sinh:</strong> <span th:text="${nam}">...</span></p>
+                    <p><strong>Lớp:</strong> <span th:text="${lp}">...</span></p>
+                </div>
+            </div>
+
         </div>
     </main>
 
