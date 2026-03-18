@@ -24,12 +24,12 @@ public class Page {
     private String content; 
     
     @Column(name="parentpageid")
-    private String parentPageId;
+    private int parentPageId;
 
     public Page() {
     }
 
-    public Page(int id, String pageName, String keyword, String content, String parentPageId) {
+    public Page(int id, String pageName, String keyword, String content, int parentPageId) {
         this.id = id;
         this.pageName = pageName;
         this.keyword = keyword;
@@ -68,11 +68,9 @@ public class Page {
         this.content = content;
     }
 
-    public String getParentPageId() {
+    public int getParentPageId() {
         return parentPageId;
     }
 
-    public void setParentPageId(String parentPageId) {
-        this.parentPageId = parentPageId;
-    }
+    
 }

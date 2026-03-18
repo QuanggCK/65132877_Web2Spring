@@ -36,9 +36,9 @@ public class HomeController {
 	
 	public HomeController() {
 		// Page
-		dsTrang.add(new Page ("001", "CaiJDo", "cjd", "nothatsula1caijday", "001") );
-		dsTrang.add(new Page ("002", "CaiJDo2", "cjd2", "nothatsula2caijday", "002"));
-		dsTrang.add(new Page ("003", "CaiJDo3", "cjd3", "nothatsula3caijday", "003"));
+		dsTrang.add(new Page (001, "CaiJDo", "cjd", "nothatsula1caijday", 001) );
+		dsTrang.add(new Page (002, "CaiJDo2", "cjd2", "nothatsula2caijday", 002));
+		dsTrang.add(new Page (003, "CaiJDo3", "cjd3", "nothatsula3caijday", 003));
 		// Post
 		dsPost.add( new Post("01","PhaDaoDiGioi1","Makoto clutch con Gryphon","018","Shinja1"));
 		dsPost.add( new Post("02","PhaDaoDiGioi2","Makoto gank 2 con quái biển cùng Dũng Sĩ Ánh Sáng ","019","Shinja2"));
@@ -65,15 +65,15 @@ public class HomeController {
 
 
     @GetMapping("/page/view/{id}")
-    public String viewPage(@PathVariable("id") String id, ModelMap m) {
+    public String viewPage(@PathVariable("id") int id, ModelMap m) {
         Page foundPage = null;
         for (Page p : dsTrang) {
-            if (p.getId().equals(id)) { 
+            // Đã đổi thành == để so sánh số nguyên (int)
+            if (p.getId() == id) { 
                 foundPage = p;
                 break;
             }
         }
-        
 
         if (foundPage != null) {
             m.addAttribute("pageDetail", foundPage);
@@ -84,8 +84,9 @@ public class HomeController {
     }
 
     @GetMapping("/page/delete/{id}")
-    public String deletePage(@PathVariable("id") String id) {
-        dsTrang.removeIf(p -> p.getId().equals(id));
+    public String deletePage(@PathVariable("id") int id) {
+        // Đã đổi thành == để so sánh số nguyên (int)
+        dsTrang.removeIf(p -> p.getId() == id);
         return "redirect:/page/all"; 
     }
 
