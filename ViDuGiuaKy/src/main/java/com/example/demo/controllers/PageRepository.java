@@ -7,3 +7,4 @@ import com.example.demo.controllers.Page;
 public interface PageRepository extends JpaRepository<Page, String>{
 
 }
+  

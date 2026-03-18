@@ -12,9 +12,9 @@ public class Page {
 
     @Id
     @Column(name="id")
-    private String id;
+    private int id;
     
-    @Column(name="pageName")
+    @Column(name="pagename")
     private String pageName;
     
     @Column(name="keyword")
@@ -23,15 +23,13 @@ public class Page {
     @Column(name="content")
     private String content; 
     
-    @Column(name="parentPageId")
+    @Column(name="parentpageid")
     private String parentPageId;
 
-    // Hàm khởi tạo rỗng (Bắt buộc phải có cho Spring Boot / JPA)
     public Page() {
     }
 
-    // Hàm khởi tạo có tham số
-    public Page(String id, String pageName, String keyword, String content, String parentPageId) {
+    public Page(int id, String pageName, String keyword, String content, String parentPageId) {
         this.id = id;
         this.pageName = pageName;
         this.keyword = keyword;
@@ -40,13 +38,11 @@ public class Page {
     }
 
     // Các hàm Getter và Setter
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    
 
     public String getPageName() {
         return pageName;
