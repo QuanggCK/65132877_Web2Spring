@@ -1,13 +1,36 @@
 package com.example.demo.controllers;
 
-public class Page {
-	private String id;
-    private String pageName;
-    public String keyword;
-    public String content;
-    public String parentPageId;
-    public Page() {}
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "pages") 
+public class Page {
+
+
+    @Id
+    @Column(name="id")
+    private String id;
+    
+    @Column(name="pageName")
+    private String pageName;
+    
+    @Column(name="keyword")
+    private String keyword; 
+    
+    @Column(name="content")
+    private String content; 
+    
+    @Column(name="parentPageId")
+    private String parentPageId;
+
+    // Hàm khởi tạo rỗng (Bắt buộc phải có cho Spring Boot / JPA)
+    public Page() {
+    }
+
+    // Hàm khởi tạo có tham số
     public Page(String id, String pageName, String keyword, String content, String parentPageId) {
         this.id = id;
         this.pageName = pageName;
@@ -16,6 +39,7 @@ public class Page {
         this.parentPageId = parentPageId;
     }
 
+    // Các hàm Getter và Setter
     public String getId() {
         return id;
     }
