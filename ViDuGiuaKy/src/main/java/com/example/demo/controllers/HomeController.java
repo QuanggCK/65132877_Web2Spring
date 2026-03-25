@@ -68,7 +68,6 @@ public class HomeController {
     public String viewPage(@PathVariable("id") int id, ModelMap m) {
         Page foundPage = null;
         for (Page p : dsTrang) {
-            // Đã đổi thành == để so sánh số nguyên (int)
             if (p.getId() == id) { 
                 foundPage = p;
                 break;
@@ -85,7 +84,6 @@ public class HomeController {
 
     @GetMapping("/page/delete/{id}")
     public String deletePage(@PathVariable("id") int id) {
-        // Đã đổi thành == để so sánh số nguyên (int)
         dsTrang.removeIf(p -> p.getId() == id);
         return "redirect:/page/all"; 
     }

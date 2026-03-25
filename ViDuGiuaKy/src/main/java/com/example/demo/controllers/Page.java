@@ -24,12 +24,12 @@ public class Page {
     private String content; 
     
     @Column(name="parentpageid")
-    private int parentPageId;
+    private Integer parentPageId;
 
     public Page() {
     }
 
-    public Page(int id, String pageName, String keyword, String content, int parentPageId) {
+    public Page(int id, String pageName, String keyword, String content, Integer parentPageId) {
         this.id = id;
         this.pageName = pageName;
         this.keyword = keyword;
@@ -42,7 +42,9 @@ public class Page {
         return id;
     }
 
-    
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPageName() {
         return pageName;
@@ -68,9 +70,12 @@ public class Page {
         this.content = content;
     }
 
-    public int getParentPageId() {
+    public Integer getParentPageId() {
         return parentPageId;
     }
-
+    
+    public void setParentPageId(Integer parentPageId) { // Đổi int thành Integer
+        this.parentPageId = parentPageId;
+    }
     
 }
