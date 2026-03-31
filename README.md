@@ -12,12 +12,15 @@
 ---
 
 ## [🛒 QuanLyBanHang](QuanLyBanHang/)
-This project is a **Sales Management** system. It focuses on practical CRUD (Create, Read, Update, Delete) operations, demonstrating how to manage products, categories, or users. This assignment helps solidify the understanding of database interactions and integrating back-end logic with front-end views.
+This project is a **Sales Management** system.  
+It focuses on practical CRUD (Create, Read, Update, Delete) operations, demonstrating how to manage products, categories, or users.  
+This assignment helps solidify the understanding of database interactions and integrating back-end logic with front-end views.
 
 ---
 
 ## [📝 ViDuGiuaKy](ViDuGiuaKy/)
-This folder contains the **Midterm Example/Project**. It serves as a comprehensive review of the concepts covered in the first half of the course, integrating everything from handling requests, data processing in the Controller, to rendering dynamic data on the View.
+This folder contains the **Midterm Example/Project**.   
+It serves as a comprehensive review of the concepts covered in the first half of the course, integrating everything from handling requests, data processing in the Controller, to rendering dynamic data on the View.
 
 ---
 
