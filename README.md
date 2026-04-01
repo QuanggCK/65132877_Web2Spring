@@ -11,6 +11,24 @@
 
 ---
 
+## [🛒 QuanLyBanHang](QuanLyBanHang/)
+This project is a **Sales Management** system.  
+It focuses on practical CRUD (Create, Read, Update, Delete) operations, demonstrating how to manage products, categories, or users.  
+This assignment helps solidify the understanding of database interactions and integrating back-end logic with front-end views.
+
+---
+
+## [📝 ViDuGiuaKy](ViDuGiuaKy/)
+This folder contains the **Midterm Example/Project**.   
+It serves as a comprehensive review of the concepts covered in the first half of the course, integrating everything from handling requests, data processing in the Controller, to rendering dynamic data on the View.
+
+---
+
+## [🛡️ SpringSecurity](SpringSecurity/)
+This assignment introduces **Spring Security**. It demonstrates how to secure a Spring Boot web application by implementing authentication (login/logout mechanisms) and authorization (role-based access control) to protect specific endpoints and user data.
+
+---
+
 ## [🔹 B2_TruyenDuLieuSangView](B2_TruyenDuLieuSangView/)
 ## [🔹 B3_LayThamSoTaiController](B2_LayThamSoTaiController/)
 ## [🔹 B4_BMICalculator](B4_BMICalculator/)
@@ -92,4 +110,3 @@ Let me show you
 
 ## [ViDuHello](ViDuHello/)
 This asignment is to help use to get used to with the layout of Eclipse
-
