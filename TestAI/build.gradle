@@ -14,8 +14,11 @@ java {
 	}
 }
 
+// Đã thêm 2 repository chứa các bản Snapshot và Milestone của Spring AI vào đây
 repositories {
 	mavenCentral()
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url 'https://central.sonatype.com/repository/maven-snapshots/' }
 }
 
 ext {
@@ -23,10 +26,11 @@ ext {
 }
 
 dependencies {
-	implementation 'org.springframework.ai:spring-ai-starter-model-openai'
+	implementation 'org.springframework.ai:spring-ai-google-genai-spring-boot-starter'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
 }
 
 dependencyManagement {
