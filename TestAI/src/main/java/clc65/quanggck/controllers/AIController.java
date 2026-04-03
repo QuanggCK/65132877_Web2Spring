@@ -1,31 +1,43 @@
 package clc65.quanggck.controllers;
 
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller // Dùng @Controller để trả về giao diện HTML
 public class AIController {
 
     private final ChatModel chatModel;
 
-    // Tiêm ChatModel vào (Spring Boot sẽ tự động cấu hình dựa trên file properties)
     public AIController(ChatModel chatModel) {
         this.chatModel = chatModel;
     }
 
-    @GetMapping("/chat")
-    public String chatWithGroq(@RequestParam(defaultValue = "Hãy kể 3 video trên kênh QuanggCK") String prompt) {
-        
-        long startTime = System.currentTimeMillis(); 
-        
+    @GetMapping("/")
+    public String showIndexPage() {
+        return "index"; 
+    }
 
-        String response = chatModel.call(prompt);
+    @PostMapping("/chat")
+    public String chatWithGroq(
+            @RequestParam(defaultValue = "Hãy kể 3 video có views cao nhất của kênh QuanggCK trên youtube") String prompt, 
+            Model model) {
         
-        long endTime = System.currentTimeMillis(); 
+        long startTime = System.currentTimeMillis();
         
-        return "<h3> Groq trả lời (Mất " + (endTime - startTime) + " ms):</h3>" +
-               "<p>" + response + "</p>";
+        String aiResponse = chatModel.call(prompt);
+        
+        long endTime = System.currentTimeMillis();
+        long timeTaken = endTime - startTime;
+
+        // Đẩy dữ liệu sang file index.html
+        model.addAttribute("userPrompt", prompt);
+        model.addAttribute("aiResponse", aiResponse);
+        model.addAttribute("timeTaken", timeTaken);
+
+        return "index";
     }
 }
