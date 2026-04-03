@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Nhập</title>
+</head>
+<body>
+    <h2>Đăng nhập hệ thống</h2>
+    <form id="loginForm">
+        <label>Username:</label><br>
+        <input type="text" id="username" required><br><br>
+        
+        <label>Password:</label><br>
+        <input type="password" id="password" required><br><br>
+        
+        <button type="submit">Đăng Nhập</button>
+    </form>
+
+    <p id="message" style="color: red;"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            // Ngăn chặn form tải lại trang
+            event.preventDefault(); 
+
+            const usernameValue = document.getElementById("username").value;
+            const passwordValue = document.getElementById("password").value;
+
+            // Gọi API Đăng nhập
+            fetch("/api/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: usernameValue,
+                    password: passwordValue
+                })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Sai tài khoản hoặc mật khẩu");
+                return response.json();
+            })
+            .then(data => {
+                // 🔥 QUAN TRỌNG NHẤT: Lưu Token vào LocalStorage
+                localStorage.setItem("jwt_token", data.token); // Tùy thuộc vào tên biến trong JwtResponse của bạn
+                
+                alert("Đăng nhập thành công!");
+                // Chuyển hướng sang trang sản phẩm
+                window.location.href = "/products.html"; 
+            })
+            .catch(error => {
+                document.getElementById("message").innerText = error.message;
+            });
+        });
+    </script>
+</body>
+</html>

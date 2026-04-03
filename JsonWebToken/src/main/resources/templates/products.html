@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách Sản Phẩm</title>
+</head>
+<body>
+    <h2>Khu vực Bảo mật (Cần có JWT)</h2>
+    
+    <button onclick="logout()">Đăng xuất</button>
+    
+    <hr>
+    <div id="product-data">Đang tải dữ liệu...</div>
+
+    <script>
+        // Khi trang web vừa load xong
+        window.onload = function() {
+            // 1. Lấy Token từ kho chứa
+            const token = localStorage.getItem("jwt_token");
+
+            // Nếu không có token, đuổi về trang đăng nhập
+            if (!token) {
+                alert("Bạn chưa đăng nhập!");
+                window.location.href = "/login.html";
+                return;
+            }
+
+            // 2. Gọi API kèm theo Token trong Header
+            fetch("/api/products", {
+                method: "GET",
+                headers: {
+                    // 🔥 QUAN TRỌNG: Gắn chữ Bearer và token vào
+                    "Authorization": "Bearer " + token 
+                }
+            })
+            .then(response => {
+                if (response.status === 401 || response.status === 403) {
+                    throw new Error("Token hết hạn hoặc bạn không có quyền!");
+                }
+                return response.text(); // Đổi thành .json() nếu API của bạn trả về danh sách JSON
+            })
+            .then(data => {
+                // In dữ liệu ra màn hình
+                document.getElementById("product-data").innerHTML = `<h3 style="color: green">${data}</h3>`;
+            })
+            .catch(error => {
+                document.getElementById("product-data").innerHTML = `<p style="color: red">${error.message}</p>`;
+                // Xóa token cũ bị lỗi và đuổi về login
+                localStorage.removeItem("jwt_token");
+            });
+        }
+
+        // Hàm Đăng xuất
+        function logout() {
+            // Xóa cái rụp khỏi LocalStorage là xong, không cần gọi API backend
+            localStorage.removeItem("jwt_token");
+            window.location.href = "/login.html";
+        }
+    </script>
+</body>
+</html>
