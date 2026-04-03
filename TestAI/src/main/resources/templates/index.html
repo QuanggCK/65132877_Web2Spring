@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trợ lý AI - LLaMA 3</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 40px auto; max-width: 800px; line-height: 1.6; }
+        .input-section { margin-bottom: 20px; }
+        textarea { width: 100%; height: 100px; padding: 15px; border: 2px solid #007bff; border-radius: 8px; font-size: 16px; box-sizing: border-box; resize: vertical; }
+        button { background-color: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+        button:hover { background-color: #0056b3; }
+        
+        /* CSS cho khu vực hiển thị kết quả */
+        .chat-box { border: 1px solid #ddd; padding: 25px; border-radius: 10px; background-color: #f8f9fa; margin-top: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .user-question { color: #0056b3; font-weight: bold; font-size: 1.1em; margin-bottom: 15px; border-left: 4px solid #0056b3; padding-left: 10px;}
+        .ai-answer { margin-top: 15px; color: #333; }
+        .time-badge { font-size: 0.85em; color: #666; font-style: italic; margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 10px;}
+    </style>
+</head>
+<body>
+
+    <h2>🤖 Trợ lý ảo siêu tốc (Powered by Groq)</h2>
+
+    <div class="input-section">
+        <form action="/chat" method="post">
+            <textarea name="prompt" required>Hãy kể 3 video có views cao nhất của kênh QuanggCK trên Youtube</textarea>
+            <br>
+            <button type="submit">Gửi câu hỏi 🚀</button>
+        </form>
+    </div>
+
+    <div class="chat-box" th:if="${aiResponse != null}">
+        
+        <div class="user-question">
+            🧑 Bạn: <span th:text="${userPrompt}"></span>
+        </div>
+        
+        <div class="ai-answer">
+            <strong> AI:</strong>
+            <div style="white-space: pre-wrap;" th:utext="${aiResponse}"></div>
+        </div>
+        
+        <div class="time-badge">
+            ⏱️ Tốc độ phản hồi: <span th:text="${timeTaken}"></span> ms
+        </div>
+
+    </div>
+
+</body>
+</html>
