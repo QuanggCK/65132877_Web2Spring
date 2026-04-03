@@ -23,7 +23,7 @@ public class AIController {
 
     @PostMapping("/chat")
     public String chatWithGroq(
-            @RequestParam(defaultValue = "Hãy kể 3 video có views cao nhất của kênh QuanggCK trên youtube") String prompt, 
+    		@RequestParam(name = "prompt", defaultValue = "1 + 1 = mấy") String prompt,
             Model model) {
         
         long startTime = System.currentTimeMillis();
