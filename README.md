@@ -11,6 +11,18 @@
 
 ---
 
+## [🤖 TestAI](TestAI/)
+This project demonstrates how to integrate Artificial Intelligence into a Spring Boot application using the **Groq Model**.  
+It helps me understand how to make API calls to an external LLM (Large Language Model) service, process the JSON responses, and seamlessly display the generated AI content on the web interface.
+
+---
+
+## [🎟️ JWT (JSON Web Token)](JWT/)
+This assignment explores stateless authentication and authorization using **JWT**.  
+It shows how to generate a secure token upon user login, validate it, and use it to authorize subsequent requests, providing a modern alternative to traditional session-based security in Spring applications.
+
+---
+
 ## [🛒 QuanLyBanHang](QuanLyBanHang/)
 This project is a **Sales Management** system.  
 It focuses on practical CRUD (Create, Read, Update, Delete) operations, demonstrating how to manage products, categories, or users.  
