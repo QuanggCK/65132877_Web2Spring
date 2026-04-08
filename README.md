@@ -13,7 +13,6 @@
 
 ## [🤖 TestAI](TestAI/)
 This project demonstrates how to integrate Artificial Intelligence into a Spring Boot application using the **Groq Model**.  
-It helps me understand how to make API calls to an external LLM (Large Language Model) service, process the JSON responses, and seamlessly display the generated AI content on the web interface.
 
 ---
 
