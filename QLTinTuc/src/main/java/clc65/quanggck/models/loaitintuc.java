@@ -2,6 +2,7 @@ package clc65.quanggck.models;
 
 import jakarta.persistence.*;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "loaitintuc")
@@ -16,6 +17,7 @@ public class loaitintuc {
     private String tenLoai;
 
     // Tham chiếu đến class tintuc (viết thường)
+    @JsonIgnore // DÒNG NÀY CỰC KỲ QUAN TRỌNG CHO API
     @OneToMany(mappedBy = "loaiTinTuc", cascade = CascadeType.ALL)
     private List<tintuc> danhSachTinTuc;
     
