@@ -56,10 +56,11 @@
                         <td th:text="${tin.ngayDang}">01/01/2026</td>
                         
                         <td>
-                            <a th:href="@{/admin/edit/{id}(id=${tin.idTin})}" class="btn btn-warning btn-sm text-dark fw-bold px-3 me-1">✏️ Sửa</a>
+                            <td>
+                            <a th:href="@{/admin/edit/{id}(id=${tin.idTin})}" class="text-dark text-decoration-none me-3">Sửa</a>
                             
-                            <a th:href="@{/admin/delete/{id}(id=${tin.idTin})}" class="btn btn-danger btn-sm fw-bold px-3" 
-                               onclick="return confirm('Bạn có chắc chắn muốn xóa bài viết này không? Hành động này không thể hoàn tác!');">🗑️ Xóa</a>
+                            <a th:href="@{/admin/delete/{id}(id=${tin.idTin})}" class="text-dark text-decoration-none" 
+                               onclick="return confirm('Bạn có chắc chắn muốn xóa bài viết này không?');">Xóa</a>
                         </td>
                     </tr>
                     
