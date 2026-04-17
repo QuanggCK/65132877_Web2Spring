@@ -46,6 +46,11 @@ public class AdminController {
         model.addAttribute("danhSachLoai", loaiTinTucService.getAllLoaiTinTuc());
         return "admin/add-edit";
     }
+    
+    @GetMapping("/login")
+    public String trangDangNhap() {
+        return "login"; // Trả về file login.html
+    }
 
     @GetMapping("/delete/{id}")
     public String deleteTin(@PathVariable Integer id, Model model) {
