@@ -54,8 +54,4 @@ public class HomeController {
         }
     }
 
-    @GetMapping("/admin")
-    public String trangAdmin() {
-        return "admin"; 
-    }
 }

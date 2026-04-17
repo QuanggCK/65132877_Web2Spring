@@ -22,41 +22,36 @@ public class AdminController {
     @GetMapping("")
     public String adminIndex(Model model) {
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "admin/index";
+        return "index"; 
     }
+
 
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("tin", new tintuc());
         model.addAttribute("danhSachLoai", loaiTinTucService.getAllLoaiTinTuc());
-        return "admin/add-edit";
+        return "add-edit";
     }
+
 
     @PostMapping("/save")
     public String saveTin(@ModelAttribute("tin") tintuc tin, Model model) {
         tinTucService.saveTinTuc(tin); 
-        
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "admin/index"; 
+        return "index"; 
     }
 
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable Integer id, Model model) {
         model.addAttribute("tin", tinTucService.getTinTucById(id));
         model.addAttribute("danhSachLoai", loaiTinTucService.getAllLoaiTinTuc());
-        return "admin/add-edit";
+        return "add-edit";
     }
     
-    @GetMapping("/login")
-    public String trangDangNhap() {
-        return "login"; // Trả về file login.html
-    }
-
     @GetMapping("/delete/{id}")
     public String deleteTin(@PathVariable Integer id, Model model) {
         tinTucService.deleteTinTuc(id); 
-        
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "admin/index"; 
+        return "index"; 
     }
 }
