@@ -32,14 +32,12 @@ public class AdminController {
         return "admin/add-edit";
     }
 
-    // 🔴 ĐÃ SỬA: Không redirect sau khi Lưu
     @PostMapping("/save")
     public String saveTin(@ModelAttribute("tin") tintuc tin, Model model) {
-        tinTucService.saveTinTuc(tin); // Lưu vào DB
+        tinTucService.saveTinTuc(tin); 
         
-        // Lấy lại danh sách mới nhất truyền ra view
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "admin/index"; // Trả thẳng về giao diện danh sách
+        return "admin/index"; 
     }
 
     @GetMapping("/edit/{id}")
@@ -49,13 +47,11 @@ public class AdminController {
         return "admin/add-edit";
     }
 
-    // 🔴 ĐÃ SỬA: Không redirect sau khi Xóa
     @GetMapping("/delete/{id}")
     public String deleteTin(@PathVariable Integer id, Model model) {
-        tinTucService.deleteTinTuc(id); // Xóa khỏi DB
+        tinTucService.deleteTinTuc(id); 
         
-        // Lấy lại danh sách mới nhất truyền ra view
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "admin/index"; // Trả thẳng về giao diện danh sách
+        return "admin/index"; 
     }
 }
