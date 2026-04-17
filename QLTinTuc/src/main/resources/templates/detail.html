@@ -15,7 +15,7 @@
             <h1 class="fw-bold mb-3" th:text="${tin.title}">Tiêu đề bài viết</h1>
             <div class="text-muted mb-4 pb-3 border-bottom">
                 Ngày đăng: <span th:text="${tin.ngayDang}" class="fw-bold"></span> 
-                trong chuyên mục <span class="badge bg-secondary" th:text="${tin.loaiTinTuc?.tenLoai}"></span>
+                --- <span class="badge bg-secondary" th:text="${tin.loaiTinTuc?.tenLoai}"></span>
             </div>
 
             <div th:if="${tin.image != null and !tin.image.isEmpty()}" class="mb-4 text-center">
@@ -23,7 +23,7 @@
             </div>
 
             <div class="fs-5" style="line-height: 1.8;" th:utext="${tin.content}">
-                Nội dung chi tiết ở đây...
+                Nội dung 
             </div>
         </div>
     </div>
