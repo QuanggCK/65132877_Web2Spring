@@ -19,10 +19,11 @@ public class AdminController {
         this.loaiTinTucService = loaiTinTucService;
     }
 
+
     @GetMapping("")
     public String adminIndex(Model model) {
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "index"; 
+        return "admin"; 
     }
 
 
@@ -33,12 +34,11 @@ public class AdminController {
         return "add-edit";
     }
 
-
     @PostMapping("/save")
     public String saveTin(@ModelAttribute("tin") tintuc tin, Model model) {
         tinTucService.saveTinTuc(tin); 
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "index"; 
+        return "admin"; 
     }
 
     @GetMapping("/edit/{id}")
@@ -48,10 +48,11 @@ public class AdminController {
         return "add-edit";
     }
     
+
     @GetMapping("/delete/{id}")
     public String deleteTin(@PathVariable("id") Integer id, Model model) {
         tinTucService.deleteTinTuc(id); 
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
-        return "index"; 
+        return "admin"; 
     }
 }
