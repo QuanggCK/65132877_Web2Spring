@@ -42,14 +42,14 @@ public class AdminController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Integer id, Model model) {
+    public String showEditForm(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("tin", tinTucService.getTinTucById(id));
         model.addAttribute("danhSachLoai", loaiTinTucService.getAllLoaiTinTuc());
         return "add-edit";
     }
     
     @GetMapping("/delete/{id}")
-    public String deleteTin(@PathVariable Integer id, Model model) {
+    public String deleteTin(@PathVariable("id") Integer id, Model model) {
         tinTucService.deleteTinTuc(id); 
         model.addAttribute("danhSachTin", tinTucService.getAllTinTuc());
         return "index"; 

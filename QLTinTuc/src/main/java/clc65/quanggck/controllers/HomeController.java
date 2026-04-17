@@ -29,7 +29,7 @@ public class HomeController {
     }
 
     @GetMapping("/loai/{id}")
-    public String tinTucTheoLoai(@PathVariable Integer id, Model model) {
+    public String tinTucTheoLoai(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("danhSachTin", tinTucService.getTinTucById(id)); 
         model.addAttribute("danhSachLoai", loaiTinTucService.getAllLoaiTinTuc());
         
@@ -37,11 +37,18 @@ public class HomeController {
     }
 
     @GetMapping("/tin-tuc/{id}")
-    public String detail(@PathVariable Integer id, Model model) {
+    public String detail(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("tin", tinTucService.getTinTucById(id));
         return "detail"; 
     }
     
+
+    @GetMapping("/login")
+    public String trangDangNhap() {
+        return "login"; 
+    }
+
+
     @PostMapping("/login")
     public String xuLyDangNhap(@RequestParam("username") String username, 
                                @RequestParam("password") String password, 
