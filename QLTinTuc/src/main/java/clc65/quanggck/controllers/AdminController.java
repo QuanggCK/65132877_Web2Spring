@@ -2,7 +2,7 @@ package clc65.quanggck.controllers;
 
 import clc65.quanggck.models.tintuc;
 import clc65.quanggck.service.TinTucService;
-import clc65.quanggck.services.LoaiTinTucService;
+import clc65.quanggck.service.LoaiTinTucService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
