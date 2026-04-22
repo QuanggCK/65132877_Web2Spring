@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class HomeController {
 
@@ -43,12 +45,13 @@ public class HomeController {
     @PostMapping("/login")
     public String xuLyDangNhap(@RequestParam("username") String username, 
                                @RequestParam("password") String password, 
+                               HttpSession session, 
                                Model model) {
-        // Kiểm tra tài khoản admin / 123
+        
         if ("admin".equals(username) && "123".equals(password)) {
+            session.setAttribute("user", "admin"); 
             return "redirect:/admin"; 
         } else {
-            // Gửi thông báo lỗi về view
             model.addAttribute("error", true); 
             return "login"; 
         }

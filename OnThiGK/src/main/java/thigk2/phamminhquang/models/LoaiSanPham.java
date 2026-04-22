@@ -1,5 +1,5 @@
 package thigk2.phamminhquang.models;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -15,6 +15,7 @@ public class LoaiSanPham {
     @Column(name = "ten_loai", nullable = false)
     private String tenLoai;
 
+    @JsonIgnore // THÊM DÒNG NÀY VÀO ĐÂY
     @OneToMany(mappedBy = "loaiSanPham")
     private List<SanPham> danhSachSanPham;
 

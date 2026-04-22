@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -56,4 +58,16 @@ public class AdminController {
         sanPhamService.deleteSanPham(id);
         return "redirect:/admin";
     }
+    
+
+        @GetMapping("")
+        public String adminIndex(HttpSession session, Model model) {
+
+            if (session.getAttribute("user") == null) {
+                return "redirect:/login"; 
+            }
+            model.addAttribute("danhSachSP", sanPhamService.getAllSanPham());
+            return "admin/index";
+        }
+
 }
