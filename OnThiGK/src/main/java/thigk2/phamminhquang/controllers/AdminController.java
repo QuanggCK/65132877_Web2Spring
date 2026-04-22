@@ -16,58 +16,51 @@ public class AdminController {
     private final SanPhamService sanPhamService;
     private final LoaiSanPhamService loaiSanPhamService;
 
-    // Constructor Injection
     public AdminController(SanPhamService sanPhamService, LoaiSanPhamService loaiSanPhamService) {
         this.sanPhamService = sanPhamService;
         this.loaiSanPhamService = loaiSanPhamService;
     }
 
-
     @GetMapping("")
-    public String adminIndex(Model model) {
+    public String adminIndex(HttpSession session, Model model) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/login"; 
+        }
         model.addAttribute("danhSachSP", sanPhamService.getAllSanPham());
         return "admin/index"; 
     }
 
-
     @GetMapping("/add")
-    public String showAddForm(Model model) {
+    public String showAddForm(HttpSession session, Model model) {
+        if (session.getAttribute("user") == null) return "redirect:/login";
+        
         model.addAttribute("sanpham", new SanPham());
         model.addAttribute("danhSachLoai", loaiSanPhamService.getAllLoai());
         return "admin/add-edit";
     }
 
-
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") Integer id, Model model) {
+    public String showEditForm(@PathVariable("id") Integer id, HttpSession session, Model model) {
+        if (session.getAttribute("user") == null) return "redirect:/login";
+        
         model.addAttribute("sanpham", sanPhamService.getSanPhamById(id));
         model.addAttribute("danhSachLoai", loaiSanPhamService.getAllLoai());
         return "admin/add-edit";
     }
 
-
     @PostMapping("/save")
-    public String saveSanPham(@ModelAttribute("sanpham") SanPham sp) {
+    public String saveSanPham(@ModelAttribute("sanpham") SanPham sp, HttpSession session) {
+        if (session.getAttribute("user") == null) return "redirect:/login";
+        
         sanPhamService.saveSanPham(sp);
         return "redirect:/admin";
     }
 
-
     @GetMapping("/delete/{id}")
-    public String deleteSanPham(@PathVariable("id") Integer id) {
+    public String deleteSanPham(@PathVariable("id") Integer id, HttpSession session) {
+        if (session.getAttribute("user") == null) return "redirect:/login";
+        
         sanPhamService.deleteSanPham(id);
         return "redirect:/admin";
     }
-    
-
-        @GetMapping("")
-        public String adminIndex(HttpSession session, Model model) {
-
-            if (session.getAttribute("user") == null) {
-                return "redirect:/login"; 
-            }
-            model.addAttribute("danhSachSP", sanPhamService.getAllSanPham());
-            return "admin/index";
-        }
-
 }
