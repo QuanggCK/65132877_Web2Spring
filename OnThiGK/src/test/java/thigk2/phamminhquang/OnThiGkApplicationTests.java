@@ -1,4 +1,4 @@
-package clc65.quanggck;
+package thigk2.phamminhquang;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

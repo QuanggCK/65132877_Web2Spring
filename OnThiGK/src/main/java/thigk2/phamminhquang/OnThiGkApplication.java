@@ -1,4 +1,4 @@
-package clc65.quanggck;
+package thigk2.phamminhquang;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
