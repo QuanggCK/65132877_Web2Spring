@@ -23,10 +23,10 @@
     </nav>
 
     <div class="container">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0" th:if="${sp != null}">
             <div class="row g-0">
                 <div class="col-md-6 bg-white d-flex align-items-center justify-content-center p-4">
-                    <img th:src="${sp.img}" class="img-fluid product-img" alt="Hình ảnh sản phẩm">
+                    <img th:src="@{'/images/' + ${sp.img}}" class="img-fluid product-img" alt="Hình ảnh sản phẩm">
                 </div>
 
                 <div class="col-md-6 p-5">
@@ -58,6 +58,16 @@
                 </div>
             </div>
         </div>
+        
+        <div th:unless="${sp != null}" class="alert alert-danger">
+            Sản phẩm không tồn tại hoặc đã bị xóa!
+        </div>
     </div>
 
-    <footer class="mt-5 py-4 bg-white text-center text-muted
+    <footer class="mt-5 py-4 text-center text-muted">
+        <p>© 2026 Pham Minh Quang</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
