@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -31,5 +33,24 @@ public class HomeController {
     public String viewDetail(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("sp", sanPhamService.getSanPhamById(id));
         return "detail"; 
+    }
+    
+    @GetMapping("/login")
+    public String trangDangNhap() {
+        return "login"; 
+    }
+
+    @PostMapping("/login")
+    public String xuLyDangNhap(@RequestParam("username") String username, 
+                               @RequestParam("password") String password, 
+                               Model model) {
+        // Kiểm tra tài khoản admin / 123
+        if ("admin".equals(username) && "123".equals(password)) {
+            return "redirect:/admin"; 
+        } else {
+            // Gửi thông báo lỗi về view
+            model.addAttribute("error", true); 
+            return "login"; 
+        }
     }
 }
