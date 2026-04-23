@@ -18,7 +18,6 @@ public class LoaiSanPham {
     @OneToMany(mappedBy = "loaiSanPham", cascade = CascadeType.ALL)
     private List<SanPham> danhSachSanPham;
 
-    // --- CONSTRUCTORS ---
     public LoaiSanPham() {
     }
 
@@ -26,8 +25,6 @@ public class LoaiSanPham {
         this.id_loai = id_loai;
         this.ten_loai = ten_loai;
     }
-
-    // --- GETTERS AND SETTERS ---
 
     public Integer getId_loai() {
         return id_loai;
