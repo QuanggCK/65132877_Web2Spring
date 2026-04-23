@@ -3,6 +3,8 @@ package thigk2.phamminhquang.models;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "loaisanpham") 
 public class LoaiSanPham {
@@ -15,6 +17,7 @@ public class LoaiSanPham {
     @Column(name = "ten_loai", nullable = false) 
     private String ten_loai;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "loaiSanPham", cascade = CascadeType.ALL)
     private List<SanPham> danhSachSanPham;
 
