@@ -22,7 +22,6 @@ public class TinTucService {
         return tinTucRepository.findAll();
     }
     
- // Thêm hàm lưu tin tức vào trong class TinTucService
     public void saveTinTuc(TinTuc tinTuc) {
         tinTucRepository.save(tinTuc);
     }

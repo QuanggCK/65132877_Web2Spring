@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpSession;
 import thigk2.phamminhquang.models.TinTuc;
 import thigk2.phamminhquang.services.TinTucService;
 import thigk2.phamminhquang.services.LoaiTinTucService;
@@ -21,7 +23,7 @@ public class AdminController {
     private LoaiTinTucService loaiTinTucService;
 
     @GetMapping("/admin/tintuc")
-    public String adminList(ModelMap m) {
+    public String adminList(ModelMap m, HttpSession session) {
         m.addAttribute("dsTinTuc", tinTucService.getAllTinTuc());
         m.addAttribute("dsLoai", loaiTinTucService.getAllLoaiTinTuc());
         m.addAttribute("newTinTuc", new TinTuc()); 

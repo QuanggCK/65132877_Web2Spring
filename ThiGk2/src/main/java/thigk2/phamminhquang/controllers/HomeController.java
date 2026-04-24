@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import thigk2.phamminhquang.services.TinTucService;
 import thigk2.phamminhquang.services.LoaiTinTucService;
+import thigk2.phamminhquang.models.*;
 
 @Controller
 public class HomeController {
@@ -34,7 +35,8 @@ public class HomeController {
 
     @GetMapping("/home/tintuc/detail/{id}")
     public String detail(@PathVariable("id") int id, ModelMap m) {
-        m.addAttribute("tin", tinTucService.getChiTietTin(id));
+        TinTuc currentTin = tinTucService.getChiTietTin(id);
+        m.addAttribute("tin", currentTin);
         return "detail_tintuc";
     }
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${tin != null ? tin.ten_tin : 'Chi tiết tin tức'}">Chi tiết tin tức</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .news-container { max-width: 900px; margin-top: 50px; background: white; padding: 40px; border-radius: 15px; }
+        .news-title { color: #212529; font-weight: 800; line-height: 1.3; }
+        .news-meta { color: #6c757d; font-size: 0.9rem; border-bottom: 1px solid #dee2e6; padding-bottom: 15px; margin-bottom: 25px; }
+        .news-content { font-size: 1.15rem; line-height: 1.8; color: #333; text-align: justify; white-space: pre-wrap; }
+        .btn-back { transition: 0.3s; }
+        .btn-back:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body>
+
+    <div class="container news-container shadow-sm mb-5">
+        <div th:if="${tin != null}">
+            
+            <div class="mb-4">
+                <a href="/home/tintuc" class="text-decoration-none text-primary fw-bold btn-back d-inline-block">
+                    ← Quay lại danh sách tin
+                </a>
+            </div>
+
+            <header class="mb-4">
+                <span class="badge bg-primary mb-2" th:text="${tin.loaiTinTuc.tenLoai}">Thể loại</span>
+                <h1 class="news-title mb-3" th:text="${tin.ten_tin}">Tiêu đề bài viết</h1>
+                
+                <div class="news-meta d-flex justify-content-between">
+                    <span>Người đăng: Admin</span>
+                    <span>Mã tin: <strong th:text="${tin.id_tin}"></strong></span>
+                </div>
+            </header>
+
+            <article class="news-content" th:text="${tin.thong_tin}">
+                Nội dung chi tiết của bài viết sẽ hiển thị tại đây...
+            </article>
+
+            <footer class="mt-5 pt-4 border-top">
+                <p class="text-center text-muted small italic">© 2026 - Bản tin nội bộ Pham Minh Quang</p>
+            </footer>
+        </div>
+
+        <div th:unless="${tin != null}" class="text-center py-5">
+            <h2 class="text-danger">Rất tiếc!</h2>
+            <p class="lead">Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.</p>
+            <a href="/home/tintuc" class="btn btn-primary mt-3">Quay về trang tin tức</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

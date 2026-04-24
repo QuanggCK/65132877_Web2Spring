@@ -1,5 +1,7 @@
 package thigk2.phamminhquang.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +19,7 @@ public class TinTuc {
     @Column(name = "thong_tin") 
     private String thong_tin;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_loai") 
     private LoaiTinTuc loaiTinTuc;
