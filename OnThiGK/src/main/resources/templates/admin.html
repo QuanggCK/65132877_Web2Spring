@@ -2,95 +2,166 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Admin Dashboard - Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .sidebar { min-height: 100vh; background: #212529; color: white; }
-        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 12px 20px; }
-        .sidebar a:hover, .sidebar a.active { background: #343a40; color: white; border-left: 4px solid #0d6efd; }
+        /* Sidebar cố định toàn màn hình */
+        .sidebar { 
+            min-height: 100vh; 
+            background: #212529; 
+            color: white; 
+            position: sticky;
+            top: 0;
+        }
+        .sidebar a { 
+            color: #adb5bd; 
+            text-decoration: none; 
+            display: block; 
+            padding: 15px 25px; 
+            transition: 0.3s;
+        }
+        .sidebar a:hover, .sidebar a.active { 
+            background: #343a40; 
+            color: white; 
+            border-left: 5px solid #0d6efd; 
+        }
+        .card { border-radius: 10px; }
+        .table img { border-radius: 5px; }
     </style>
 </head>
 <body class="bg-light">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-lg-2 p-0 sidebar shadow">
-                <div class="p-4 text-center">
-                    <h5 class="fw-bold m-0 text-white">MY ADMIN</h5>
+                <div class="p-4 text-center border-bottom border-secondary">
+                    <h5 class="fw-bold m-0 text-uppercase tracking-wider">My Admin</h5>
                 </div>
                 <nav class="mt-3">
                     <a href="/home">🏠 Trang chủ Store</a>
                     <a href="/admin" class="active">📦 Quản lý Sản phẩm</a>
+                    <a href="#" class="text-secondary small mt-4 ps-4 d-block">SETTINGS</a>
+                    <a href="#" class="text-danger mt-2">🚪 Đăng xuất</a>
                 </nav>
             </div>
 
             <div class="col-md-9 col-lg-10 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-bold">Danh sách Sản phẩm</h3>
-                    <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addModal">+ Thêm Sản Phẩm</button>
+                    <div>
+                        <h2 class="fw-bold m-0">Quản lý hệ thống</h2>
+                        <p class="text-muted small">Chào mừng trở lại, Admin!</p>
+                    </div>
+                    <button class="btn btn-primary shadow-sm px-4" data-bs-toggle="modal" data-bs-target="#addSPModal">
+                        <i class="bi bi-plus-lg"></i> + Sản phẩm mới
+                    </button>
                 </div>
 
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-0">
-                        <table class="table table-hover align-middle m-0">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th class="ps-3">ID</th>
-                                    <th>Tên SP</th>
-                                    <th>Giá (VNĐ)</th>
-                                    <th>Loại</th>
-                                    <th class="text-center">Thao tác</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr th:each="sp : ${dsSanPham}">
-                                    <td class="ps-3" th:text="${sp.idSanPham}"></td>
-                                    <td class="fw-bold" th:text="${sp.tenSpham}"></td>
-                                    <td class="text-danger fw-bold" th:text="${sp.gia}"></td>
-                                    <td><span class="badge bg-info text-dark" th:text="${sp.loaiSanPham.ten_loai}"></span></td>
-                                    <td class="text-center">
-                                        <a th:href="@{'/admin/edit/' + ${sp.idSanPham}}" class="btn btn-warning btn-sm px-3">Sửa</a>
-                                        <a th:href="@{'/admin/delete/' + ${sp.idSanPham}}" class="btn btn-danger btn-sm px-3" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Xóa</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm overflow-hidden">
+                            <div class="card-header bg-white py-3">
+                                <h6 class="m-0 fw-bold text-dark">Danh sách Sản phẩm hiện có</h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-hover align-middle m-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th class="ps-3">ID</th>
+                                            <th>Tên SP</th>
+                                            <th>Giá (VNĐ)</th>
+                                            <th>Loại</th>
+                                            <th class="text-end pe-3">Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="sp : ${dsSanPham}">
+                                            <td class="ps-3 text-muted" th:text="${sp.idSanPham}"></td>
+                                            <td class="fw-bold" th:text="${sp.tenSpham}"></td>
+                                            <td class="text-danger fw-bold" th:text="${sp.gia}"></td>
+                                            <td>
+                                                <span class="badge bg-info-subtle text-info border border-info" 
+                                                      th:text="${sp.loaiSanPham.ten_loai}"></span>
+                                            </td>
+                                            <td class="text-end pe-3">
+                                                <a th:href="@{'/admin/edit/' + ${sp.idSanPham}}" 
+                                                   class="btn btn-warning btn-sm me-1">Sửa</a>
+                                                <a th:href="@{'/admin/delete/' + ${sp.idSanPham}}" 
+                                                   class="btn btn-danger btn-sm" 
+                                                   onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">Xóa</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-dark text-white fw-bold">Thêm Loại Mới</div>
+                            <div class="card-body">
+                                <form th:action="@{/admin/loai/save}" method="post">
+                                    <div class="mb-3">
+                                        <label class="form-label small fw-bold">Tên loại (Topic)</label>
+                                        <input type="text" name="ten_loai" class="form-control" 
+                                               placeholder="VD: Others, Yu-Gi-Oh..." required>
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100 fw-bold shadow-sm">Lưu Loại Mới</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <label class="form-label small fw-bold mb-3 text-muted">Các loại hiện có:</label>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <div th:each="l : ${dsLoaiSanPham}" class="btn-group">
+                                        <span class="btn btn-sm btn-outline-secondary disabled" th:text="${l.ten_loai}"></span>
+                                        <a th:href="@{'/admin/loai/delete/' + ${l.id_loai}}" 
+                                           class="btn btn-sm btn-outline-danger" 
+                                           onclick="return confirm('Xóa loại sẽ làm ảnh hưởng các sản phẩm thuộc loại này. Tiếp tục?')">×</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="addModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <div class="modal fade" id="addSPModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
                 <form th:action="@{/admin/save}" method="post">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Thêm Sản Phẩm Mới</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title fw-bold">Thêm Sản Phẩm Mới</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body p-4">
                         <div class="mb-3">
-                            <label class="form-label">Tên sản phẩm</label>
-                            <input type="text" name="tenSpham" class="form-control" required>
+                            <label class="form-label fw-bold">Tên sản phẩm</label>
+                            <input type="text" name="tenSpham" class="form-control" placeholder="Nhập tên sản phẩm..." required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Giá tiền</label>
-                            <input type="text" name="gia" class="form-control" required>
+                            <label class="form-label fw-bold">Giá tiền (VNĐ)</label>
+                            <input type="text" name="gia" class="form-control" placeholder="Ví dụ: 12.000" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Loại sản phẩm</label>
+                            <label class="form-label fw-bold">Loại sản phẩm</label>
                             <select name="loaiSanPham.id_loai" class="form-select">
-                                <option th:each="l : ${dsLoaiSanPham}" th:value="${l.id_loai}" th:text="${l.ten_loai}"></option>
+                                <option th:each="l : ${dsLoaiSanPham}" 
+                                        th:value="${l.id_loai}" 
+                                        th:text="${l.ten_loai}"></option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Mô tả</label>
-                            <textarea name="description" class="form-control" rows="3"></textarea>
+                            <label class="form-label fw-bold">Mô tả</label>
+                            <textarea name="description" class="form-control" rows="3" placeholder="Mô tả ngắn gọn..."></textarea>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary px-4">Lưu sản phẩm</button>
                     </div>
                 </form>
             </div>
