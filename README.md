@@ -11,7 +11,44 @@
 
 ---
 
-## [ ThiGK]()
+## [ ThiGK](ThiGk2/)
+Result
+
+| 📸 Result | 
+|-------------|
+| ![Result](Images/ThiGk1/1.png) | 
+
+| 📸 Result | 
+|-------------|
+| ![Result](Images/ThiGk1/2.png) |
+
+| 📸 Result | 
+|-------------|
+| ![Result](Images/ThiGk1/3.png) | 
+
+| 📸 Result | 
+|-------------|
+| ![Result](Images/ThiGk1/4.png) | 
+
+| 📸 Result | 
+|-------------|
+| ![Result](Images/ThiGk1/5.png) | 
+
+| 📸 Result | 
+|-------------|
+| ![Result](Images/ThiGk1/6.png) | 
+
+| 📸 Result1 | 
+|-------------|
+| ![Result](Images/ThiGk1/7.png) | 
+
+| 📸 Result1 | 
+|-------------|
+| ![Result](Images/ThiGk1/8.png) | 
+
+| 📸 Result1 | 
+|-------------|
+| ![Result](Images/ThiGk1/9.png) | 
 
 ---
 
