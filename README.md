@@ -38,15 +38,15 @@ Result
 |-------------|
 | ![Result](Images/ThiGk1/6.png) | 
 
-| 📸 Result1 | 
+| 📸 Result | 
 |-------------|
 | ![Result](Images/ThiGk1/7.png) | 
 
-| 📸 Result1 | 
+| 📸 Result | 
 |-------------|
 | ![Result](Images/ThiGk1/8.png) | 
 
-| 📸 Result1 | 
+| 📸 Result | 
 |-------------|
 | ![Result](Images/ThiGk1/9.png) | 
 
